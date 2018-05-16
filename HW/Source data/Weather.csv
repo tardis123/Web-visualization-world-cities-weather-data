@@ -1,0 +1,507 @@
+﻿City,Country Code,Country Name,Lat,Lon,Temp (℉),Humidity (%),Cloudiness (%),Wind Speed (mph),Date
+zhuhai,CN,China,40.71,112.04,42.80,33,20,13.42,4/2/2018 11:00
+gursarai,IN,India,25.62,79.18,78.72,35,0,9.44,4/2/2018 11:50
+torbay,CA,Canada,47.66,-52.73,41.00,48,20,34.45,4/2/2018 11:00
+punta arenas,CL,Chile,-53.16,-70.91,52.65,81,90,11.41,4/2/2018 11:00
+khartoum,SD,Sudan,15.59,32.54,89.60,6,0,12.75,4/2/2018 11:30
+victoria,SC,Seychelles,-4.62,55.45,82.40,83,20,3.36,4/2/2018 11:00
+fort nelson,CA,Canada,58.81,-122.69,19.40,57,90,3.36,4/2/2018 11:00
+nikolskoye,RU,Russian Federation,59.70,30.79,37.40,86,90,6.71,4/2/2018 11:00
+butaritari,KI,Kiribati,3.07,172.79,83.22,98,12,13.24,4/2/2018 11:50
+warrnambool,AU,Australia,-38.38,142.48,60.81,95,92,8.88,4/2/2018 11:50
+arraial do cabo,BR,Brazil,-22.97,-42.02,91.40,63,75,5.82,4/2/2018 11:00
+acapulco,MX,Mexico,16.86,-99.88,82.40,74,5,8.05,4/2/2018 10:45
+manama,BH,Bahrain,26.22,50.58,76.19,47,0,5.82,4/2/2018 11:00
+hobart,AU,Australia,-42.88,147.33,57.20,67,75,10.29,4/2/2018 11:30
+ushuaia,AR,Argentina,-54.81,-68.31,48.20,93,75,4.70,4/2/2018 11:00
+tigil,RU,Russian Federation,57.80,158.67,24.27,92,80,3.62,4/2/2018 11:50
+kodiak,US,United States,39.95,-94.76,28.40,92,90,11.41,4/2/2018 11:00
+busselton,AU,Australia,-33.64,115.35,70.44,95,20,8.66,4/2/2018 11:50
+yerbogachen,RU,Russian Federation,61.28,108.01,10.41,72,64,5.08,4/2/2018 11:50
+vaini,TO,Tonga,-21.20,-175.20,73.40,100,90,20.29,4/2/2018 11:00
+rocha,UY,Uruguay,-34.48,-54.34,71.16,77,88,10.11,4/2/2018 11:50
+talnakh,RU,Russian Federation,69.49,88.39,-10.38,70,48,5.64,4/2/2018 11:50
+pisco,PE,Peru,-13.71,-76.20,77.00,61,0,8.05,4/2/2018 11:00
+sinnamary,GF,French Guiana,5.38,-52.96,79.71,100,92,5.86,4/2/2018 11:50
+carnarvon,AU,Australia,-24.87,113.63,78.90,96,8,4.41,4/2/2018 11:50
+ribeira grande,PT,Portugal,38.52,-28.70,60.80,63,20,24.16,4/2/2018 11:30
+conselheiro pena,BR,Brazil,-19.17,-41.47,86.10,61,0,3.62,4/2/2018 11:50
+tiksi,RU,Russian Federation,71.64,128.87,-10.65,36,36,2.73,4/2/2018 11:50
+makakilo city,US,United States,21.35,-158.09,73.92,100,75,11.41,4/2/2018 11:42
+roma,AU,Australia,-26.57,148.79,67.56,88,0,7.20,4/2/2018 11:50
+ongandjera,NA,Namibia,-17.88,15.07,69.36,90,64,3.06,4/2/2018 11:50
+east london,ZA,South Africa,-33.02,27.91,69.80,83,20,12.75,4/2/2018 11:00
+port lincoln,AU,Australia,-34.72,135.86,61.89,98,92,4.97,4/2/2018 11:50
+alihe,CN,China,50.57,123.73,22.83,37,0,10.22,4/2/2018 11:50
+albany,AU,Australia,-35.02,117.88,59.55,94,20,7.54,4/2/2018 11:50
+sri aman,MY,Malaysia,1.24,111.46,75.20,94,75,2.17,4/2/2018 11:00
+troina,IT,Italy,37.79,14.60,57.42,76,0,5.82,4/2/2018 11:20
+copiapo,CL,Chile,-27.37,-70.33,71.60,46,0,6.93,4/2/2018 11:00
+guerrero negro,MX,Mexico,27.97,-114.04,63.51,76,92,6.87,4/2/2018 11:50
+coquimbo,CL,Chile,-29.95,-71.34,66.20,63,20,8.05,4/2/2018 11:00
+jamestown,SH,"Saint Helena, Ascension and Tristan da Cunha",-15.94,-5.72,75.39,100,20,14.70,4/2/2018 11:50
+kapaa,US,United States,22.08,-159.32,70.57,94,90,12.75,4/2/2018 11:36
+upernavik,GL,Greenland,72.79,-56.15,23.19,93,8,13.13,4/2/2018 11:50
+laguna,BR,Brazil,-37.04,-37.29,52.65,81,90,11.41,4/2/2018 11:00
+taolanaro,MG,Madagascar,-49.78,52.40,60.81,95,92,8.88,4/2/2018 11:50
+jiayuguan,CN,China,39.77,98.29,28.05,68,0,1.39,4/2/2018 11:50
+battle creek,US,United States,42.32,-85.18,39.49,38,1,10.29,4/2/2018 11:16
+new norfolk,AU,Australia,-42.78,147.06,57.20,67,75,10.29,4/2/2018 11:30
+aklavik,CA,Canada,68.22,-135.01,3.94,71,40,17.22,4/2/2018 11:00
+uthal,PK,Pakistan,25.81,66.62,73.32,91,20,5.08,4/2/2018 11:50
+georgetown,SH,"Saint Helena, Ascension and Tristan da Cunha",-7.93,-14.42,79.80,100,0,9.33,4/2/2018 11:50
+deputatskiy,RU,Russian Federation,69.30,139.90,-16.68,46,8,2.17,4/2/2018 11:50
+tsihombe,MG,Madagascar,-41.48,45.20,73.40,100,90,20.29,4/2/2018 11:00
+saldanha,ZA,South Africa,-33.01,17.94,64.40,77,20,6.93,4/2/2018 11:00
+tirat karmel,IL,Israel,32.76,34.97,65.94,100,36,4.18,4/2/2018 11:50
+quang ngai,VN,Viet Nam,15.12,108.80,56.94,91,0,2.62,4/2/2018 11:50
+narsaq,GL,Greenland,60.91,-46.05,30.12,81,36,5.86,4/2/2018 11:50
+ngunguru,NZ,New Zealand,-35.62,174.50,63.69,100,8,3.06,4/2/2018 11:50
+pleasant point,NZ,New Zealand,-44.26,171.13,61.62,70,44,12.01,4/2/2018 11:50
+livramento,BR,Brazil,-3.03,-60.18,80.60,74,75,6.93,4/2/2018 11:00
+edeia,BR,Brazil,-17.34,-49.93,87.27,62,36,3.18,4/2/2018 11:50
+mampong,GH,Ghana,7.06,-1.40,86.37,71,48,5.19,4/2/2018 11:50
+cooma,AU,Australia,-36.24,149.13,54.33,97,88,2.17,4/2/2018 11:50
+barrow,US,United States,39.51,-90.40,37.11,98,75,16.11,4/2/2018 11:35
+opuwo,NA,Namibia,-18.06,13.84,64.05,97,64,1.72,4/2/2018 11:50
+najran,SA,Saudi Arabia,17.54,44.22,78.80,27,75,13.87,4/2/2018 11:00
+puerto ayora,EC,Ecuador,-0.74,-90.35,82.40,69,40,12.75,4/2/2018 11:00
+mataura,PF,French Polynesia,-67.16,-162.46,67.56,88,0,7.20,4/2/2018 11:50
+bethel,US,United States,60.79,-161.76,21.20,73,1,19.46,4/2/2018 10:53
+clyde river,CA,Canada,70.47,-68.59,10.40,85,90,16.11,4/2/2018 11:00
+bluff,NZ,New Zealand,-46.60,168.33,55.95,100,64,29.46,4/2/2018 11:50
+marawi,SD,Sudan,18.48,31.82,69.72,20,0,3.62,4/2/2018 11:50
+tura,RU,Russian Federation,64.27,100.22,9.69,66,68,5.41,4/2/2018 11:50
+marmaris,TR,Turkey,36.85,28.27,58.35,62,0,4.70,4/2/2018 11:20
+nizwa,OM,Oman,22.93,57.53,66.84,62,56,4.07,4/2/2018 11:48
+santo antonio do ica,BR,Brazil,-3.10,-67.94,90.60,63,44,3.96,4/2/2018 11:50
+maiduguri,NG,Nigeria,11.84,13.15,88.89,22,0,6.20,4/2/2018 11:51
+longyearbyen,SJ,Svalbard and Jan Mayen,78.22,15.64,12.20,56,0,16.11,4/2/2018 10:50
+inverell,AU,Australia,-29.78,151.11,53.25,87,0,2.51,4/2/2018 11:51
+cherskiy,RU,Russian Federation,68.75,161.30,21.57,71,0,7.43,4/2/2018 11:50
+faanui,PF,French Polynesia,-16.48,-151.75,82.77,98,76,13.35,4/2/2018 11:50
+kabinda,CD,"Congo, The Democratic Republic of the",-6.14,24.49,68.91,98,80,1.72,4/2/2018 11:51
+rikitea,PF,French Polynesia,-23.12,-134.97,78.45,100,92,6.42,4/2/2018 11:51
+yulara,AU,Australia,-25.24,130.99,73.40,43,20,8.05,4/2/2018 11:00
+tasiilaq,GL,Greenland,65.61,-37.64,26.60,73,0,4.70,4/2/2018 10:50
+ouegoa,NC,New Caledonia,-20.34,164.44,74.40,100,92,8.99,4/2/2018 11:51
+mataura,PF,French Polynesia,-38.98,-151.84,57.20,67,75,10.29,4/2/2018 11:30
+sambava,MG,Madagascar,-14.27,50.17,79.08,100,56,11.79,4/2/2018 11:50
+gaoyou,CN,China,32.79,119.43,63.15,80,0,7.65,4/2/2018 11:51
+vestmannaeyjar,IS,Iceland,63.44,-20.27,33.80,100,90,17.22,4/2/2018 11:00
+grande riviere noire,MU,Mauritius,-20.36,57.37,80.60,83,40,3.36,4/2/2018 11:00
+husavik,IS,Iceland,66.04,-17.34,30.20,63,0,4.70,4/2/2018 11:00
+hamilton,BM,Bermuda,32.30,-64.78,69.80,73,75,4.70,4/2/2018 10:55
+aitape,PG,Papua New Guinea,-3.15,142.36,78.27,100,76,5.97,4/2/2018 11:51
+romny,RU,Russian Federation,50.73,129.29,25.08,35,24,17.94,4/2/2018 11:51
+belushya guba,RU,Russian Federation,77.39,55.63,64.05,97,64,1.72,4/2/2018 11:50
+asau,TV,Tuvalu,-17.53,179.85,78.80,27,75,13.87,4/2/2018 11:00
+bredasdorp,ZA,South Africa,-34.53,20.04,66.20,82,80,1.12,4/2/2018 11:00
+asau,TV,Tuvalu,-14.29,177.22,67.56,88,0,7.20,4/2/2018 11:50
+zhigansk,RU,Russian Federation,66.77,123.37,7.17,78,68,5.19,4/2/2018 11:51
+khatanga,RU,Russian Federation,71.98,102.47,-7.68,78,64,10.45,4/2/2018 11:51
+hermanus,ZA,South Africa,-34.42,19.24,65.85,89,64,4.63,4/2/2018 11:51
+taree,AU,Australia,-31.91,152.46,71.60,83,20,10.29,4/2/2018 11:00
+moiyabana,BW,Botswana,-22.52,26.36,10.41,72,64,5.08,4/2/2018 11:50
+noumea,NC,New Caledonia,-22.28,166.46,73.40,83,0,3.36,4/2/2018 11:30
+beipiao,CN,China,41.80,120.76,36.15,65,100,17.49,4/2/2018 11:51
+cabo san lucas,MX,Mexico,22.89,-109.91,85.62,30,5,14.99,4/2/2018 10:46
+bilibino,RU,Russian Federation,68.06,166.44,10.41,78,8,2.73,4/2/2018 11:51
+avarua,CK,Cook Islands,-21.21,-159.78,77.00,83,75,6.93,4/2/2018 11:00
+amderma,RU,Russian Federation,80.13,64.59,53.25,87,0,2.51,4/2/2018 11:51
+manzhouli,CN,China,49.60,117.43,18.42,35,0,18.50,4/2/2018 11:51
+mataura,PF,French Polynesia,-56.22,-147.77,82.40,83,20,3.36,4/2/2018 11:00
+alofi,NU,Niue,-19.06,-169.92,73.40,100,92,3.36,4/2/2018 11:00
+la cruz,CR,Costa Rica,11.07,-85.63,89.76,62,20,11.41,4/2/2018 11:00
+bengkulu,ID,Indonesia,-12.96,94.05,73.40,43,20,8.05,4/2/2018 11:00
+port hardy,CA,Canada,50.70,-127.42,44.60,56,75,8.05,4/2/2018 11:00
+airai,PW,Palau,6.41,138.92,74.40,100,92,8.99,4/2/2018 11:51
+qaanaaq,GL,Greenland,77.48,-69.36,2.85,84,0,6.53,4/2/2018 11:51
+yar-sale,RU,Russian Federation,66.83,70.83,1.05,73,56,15.26,4/2/2018 11:51
+tamandare,BR,Brazil,-8.28,-70.75,91.40,66,40,3.36,4/2/2018 11:00
+rio grande,BR,Brazil,-32.03,-52.10,77.00,73,20,5.82,4/2/2018 11:00
+kazalinsk,KZ,Kazakhstan,47.78,62.98,30.20,63,0,4.70,4/2/2018 11:00
+mataura,PF,French Polynesia,-41.16,-149.32,78.45,100,92,6.42,4/2/2018 11:51
+bubaque,GW,Guinea-Bissau,11.28,-15.83,91.40,43,0,10.29,4/2/2018 11:00
+airai,PW,Palau,13.45,136.58,70.44,95,20,8.66,4/2/2018 11:50
+muravlenko,RU,Russian Federation,63.79,74.50,-4.53,81,8,7.99,4/2/2018 11:51
+saskylakh,RU,Russian Federation,71.97,114.09,-7.95,63,44,9.44,4/2/2018 11:51
+yellowknife,CA,Canada,62.45,-114.38,-2.21,53,20,8.05,4/2/2018 11:00
+sioux lookout,CA,Canada,50.10,-91.92,7.86,29,20,8.05,4/2/2018 11:00
+airai,PW,Palau,18.15,141.90,70.44,95,20,8.66,4/2/2018 11:50
+provideniya,RU,Russian Federation,64.42,-173.23,26.34,100,56,3.96,4/2/2018 11:51
+goure,NE,Niger,13.98,10.27,86.55,19,0,4.74,4/2/2018 11:51
+novouzensk,RU,Russian Federation,50.46,48.14,36.60,85,0,15.26,4/2/2018 11:51
+illoqqortoormiut,GL,Greenland,75.55,-30.90,67.56,88,0,7.20,4/2/2018 11:50
+kaitangata,NZ,New Zealand,-46.28,169.85,52.35,100,88,21.52,4/2/2018 11:51
+houma,US,United States,29.60,-90.72,80.17,57,75,8.05,4/2/2018 11:35
+mataura,PF,French Polynesia,-59.13,-151.23,70.57,94,90,12.75,4/2/2018 11:36
+nuevo progreso,MX,Mexico,17.14,-95.05,82.41,90,8,2.06,4/2/2018 11:51
+palabuhanratu,ID,Indonesia,-15.04,102.22,70.44,95,20,8.66,4/2/2018 11:50
+scottsburgh,ZA,South Africa,-33.09,35.09,10.41,72,64,5.08,4/2/2018 11:50
+port alfred,ZA,South Africa,-33.59,26.89,76.20,80,92,6.20,4/2/2018 11:51
+kousseri,CM,Cameroon,12.08,15.03,96.80,11,0,8.05,4/2/2018 11:00
+ponta do sol,CV,Cabo Verde,17.20,-25.09,68.91,100,0,14.36,4/2/2018 11:51
+saint-philippe,RE,Réunion,-21.36,55.77,77.97,78,0,4.70,4/2/2018 11:00
+ancud,CL,Chile,-41.87,-73.83,84.20,66,75,3.96,4/2/2018 12:00
+roald,NO,Norway,62.58,6.12,32.67,92,75,1.12,4/2/2018 11:20
+buchanan,LR,Liberia,5.88,-10.05,84.20,79,75,11.41,4/2/2018 11:00
+barentsburg,SJ,Svalbard and Jan Mayen,75.70,11.24,75.39,100,20,14.70,4/2/2018 11:50
+thompson,CA,Canada,55.74,-97.86,3.20,38,20,6.93,4/2/2018 11:00
+broken hill,AU,Australia,-31.97,141.45,54.69,70,0,10.45,4/2/2018 11:51
+baykit,RU,Russian Federation,61.68,96.39,9.15,67,36,7.54,4/2/2018 11:51
+hasaki,JP,Japan,35.73,140.83,54.45,87,75,6.93,4/2/2018 11:00
+asau,TV,Tuvalu,-6.93,179.26,74.40,100,92,8.99,4/2/2018 11:51
+bath,US,United States,40.73,-75.39,38.30,81,90,1.95,4/2/2018 11:15
+hualmay,PE,Peru,-11.10,-77.61,75.48,73,0,4.97,4/2/2018 11:51
+kavaratti,IN,India,10.57,72.64,84.12,100,0,6.98,4/2/2018 11:51
+severo-kurilsk,RU,Russian Federation,50.68,156.12,26.52,100,88,9.78,4/2/2018 11:51
+dikson,RU,Russian Federation,73.51,80.55,-6.78,75,20,5.53,4/2/2018 11:51
+huarmey,PE,Peru,-10.07,-78.15,78.63,52,20,3.29,4/2/2018 11:51
+elk city,US,United States,35.41,-99.40,43.43,51,90,20.80,4/2/2018 11:15
+tuktoyaktuk,CA,Canada,69.44,-133.03,-3.28,77,75,16.11,4/2/2018 11:00
+barentsburg,SJ,Svalbard and Jan Mayen,85.32,-4.16,73.40,100,90,20.29,4/2/2018 11:00
+abashiri,JP,Japan,44.01,144.25,36.24,77,64,11.23,4/2/2018 11:51
+lazaro cardenas,MX,Mexico,28.39,-105.62,77.00,16,5,9.17,4/2/2018 10:42
+mataura,PF,French Polynesia,-56.41,-145.37,86.55,19,0,4.74,4/2/2018 11:51
+sitka,US,United States,37.17,-99.65,52.08,56,0,18.95,4/2/2018 11:51
+kodino,RU,Russian Federation,63.72,39.64,33.90,90,92,17.38,4/2/2018 11:51
+chagda,RU,Russian Federation,56.86,130.41,70.57,94,90,12.75,4/2/2018 11:36
+hami,CN,China,42.84,93.51,47.40,44,88,3.51,4/2/2018 11:51
+macheng,CN,China,31.18,115.03,57.84,88,12,2.51,4/2/2018 11:51
+porto novo,CV,Cabo Verde,17.02,-25.06,75.20,50,75,26.40,4/2/2018 11:00
+atuona,PF,French Polynesia,-9.80,-139.03,80.43,100,76,17.60,4/2/2018 11:51
+yuzhno-kurilsk,RU,Russian Federation,44.03,145.86,35.43,91,56,23.09,4/2/2018 11:51
+mataura,PF,French Polynesia,-26.83,-151.44,77.97,78,0,4.70,4/2/2018 11:00
+waingapu,ID,Indonesia,-9.65,120.26,72.69,98,20,3.29,4/2/2018 11:51
+illoqqortoormiut,GL,Greenland,80.65,-23.65,32.67,92,75,1.12,4/2/2018 11:20
+hagere hiywet,ET,Ethiopia,8.98,37.85,54.69,86,68,2.51,4/2/2018 11:51
+norman wells,CA,Canada,65.28,-126.83,8.60,65,75,17.22,4/2/2018 11:00
+matay,EG,Egypt,28.42,30.79,69.63,28,0,9.66,4/2/2018 11:51
+santa vitoria do palmar,BR,Brazil,-33.52,-53.37,73.59,88,68,11.56,4/2/2018 11:51
+oriximina,BR,Brazil,-1.77,-55.87,79.80,92,56,3.06,4/2/2018 11:51
+hilo,US,United States,19.71,-155.08,67.12,69,1,6.93,4/2/2018 10:56
+les cayes,HT,Haiti,18.19,-73.75,79.89,99,0,6.76,4/2/2018 11:51
+constantine,DZ,Algeria,36.36,6.61,64.40,42,0,14.99,4/2/2018 11:30
+vilhena,BR,Brazil,-12.74,-60.15,80.52,79,80,2.95,4/2/2018 11:51
+namatanai,PG,Papua New Guinea,-3.66,152.44,79.80,100,76,5.97,4/2/2018 11:52
+cloquet,US,United States,46.72,-92.46,30.72,71,1,6.93,4/2/2018 11:35
+mar del plata,AR,Argentina,-46.43,-67.52,77.55,38,24,28.12,4/2/2018 11:48
+dolinsk,RU,Russian Federation,47.32,142.80,41.00,86,75,11.18,4/2/2018 11:00
+enugu,NG,Nigeria,6.45,7.50,73.50,99,80,3.62,4/2/2018 11:51
+taolanaro,MG,Madagascar,-80.07,59.36,48.20,93,75,4.70,4/2/2018 11:00
+laguna,BR,Brazil,-39.62,-36.53,77.00,16,5,9.17,4/2/2018 10:42
+fare,PF,French Polynesia,-16.70,-151.02,82.32,99,48,13.24,4/2/2018 11:52
+yumen,CN,China,40.29,97.04,37.50,31,0,5.19,4/2/2018 11:52
+bataipora,BR,Brazil,-22.30,-53.27,80.70,84,68,4.63,4/2/2018 11:52
+kavieng,PG,Papua New Guinea,-2.57,150.80,83.49,100,76,7.65,4/2/2018 11:52
+amapa,BR,Brazil,-1.83,-56.23,79.35,90,88,3.40,4/2/2018 11:52
+chkalovskoye,RU,Russian Federation,45.34,132.63,80.43,100,76,17.60,4/2/2018 11:51
+abha,SA,Saudi Arabia,18.22,42.50,53.60,93,75,19.46,4/2/2018 11:00
+hithadhoo,MV,Maldives,-0.60,73.08,85.11,100,76,9.10,4/2/2018 11:52
+tautira,PF,French Polynesia,-17.73,-149.15,84.20,66,20,2.24,4/2/2018 11:30
+codrington,AG,Antigua and Barbuda,23.07,-53.36,32.67,92,75,1.12,4/2/2018 11:20
+esperance,AU,Australia,-33.86,121.89,61.08,79,8,10.00,4/2/2018 11:52
+luangwa,ZM,Zambia,-12.88,28.25,68.91,78,20,5.41,4/2/2018 11:52
+terney,RU,Russian Federation,45.05,136.61,40.38,87,92,10.00,4/2/2018 11:52
+swift current,CA,Canada,50.29,-107.80,15.80,61,1,8.05,4/2/2018 11:00
+lavrentiya,RU,Russian Federation,65.58,-170.99,23.10,95,68,4.85,4/2/2018 11:52
+goundi,TD,Chad,9.36,17.37,88.17,21,0,6.76,4/2/2018 11:52
+poronaysk,RU,Russian Federation,49.22,143.10,39.39,91,76,13.69,4/2/2018 11:52
+taolanaro,MG,Madagascar,-83.99,68.65,79.89,99,0,6.76,4/2/2018 11:51
+rurrenabaque,BO,"Bolivia, Plurinational State of",-14.44,-67.53,79.56,83,75,2.84,4/2/2018 11:00
+cagayan de tawi-tawi,PH,Philippines,7.36,118.33,64.40,42,0,14.99,4/2/2018 11:30
+vila franca do campo,PT,Portugal,37.72,-25.43,60.80,63,20,24.16,4/2/2018 11:30
+geraldton,AU,Australia,-28.77,114.60,68.00,88,0,13.47,4/2/2018 11:30
+jingdezhen,CN,China,29.29,117.20,63.33,97,36,3.29,4/2/2018 11:52
+lebu,CL,Chile,-37.62,-73.65,59.73,91,0,9.66,4/2/2018 11:52
+westport,IE,Ireland,53.80,-9.52,37.40,93,90,14.99,4/2/2018 11:00
+castro,CL,Chile,-42.48,-73.76,84.20,66,75,4.18,4/2/2018 12:00
+lensk,RU,Russian Federation,60.71,114.91,5.64,57,0,5.41,4/2/2018 11:52
+iwanai,JP,Japan,42.97,140.51,46.95,85,76,18.28,4/2/2018 11:52
+manta,EC,Ecuador,-0.95,-80.73,80.60,78,75,6.93,4/2/2018 11:00
+fortuna,US,United States,40.60,-124.16,52.93,71,20,11.41,4/2/2018 11:35
+saleaula,WS,Samoa,-2.93,-170.92,-6.78,75,20,5.53,4/2/2018 11:51
+andapa,MG,Madagascar,-14.66,49.65,72.87,95,100,1.95,4/2/2018 11:52
+lagoa,PT,Portugal,37.14,-8.45,59.00,93,20,12.75,4/2/2018 11:30
+kahului,US,United States,20.89,-156.47,75.65,74,20,19.46,4/2/2018 10:56
+jimo,CN,China,36.39,120.46,62.60,82,88,6.71,4/2/2018 11:00
+ilebo,CD,"Congo, The Democratic Republic of the",-4.33,20.59,74.40,96,36,2.17,4/2/2018 11:52
+taolanaro,MG,Madagascar,-79.23,68.64,59.55,94,20,7.54,4/2/2018 11:50
+taolanaro,MG,Madagascar,-61.69,63.14,53.60,93,75,19.46,4/2/2018 11:00
+tiarei,PF,French Polynesia,-17.53,-149.33,84.20,66,20,2.24,4/2/2018 11:30
+kamaishi,JP,Japan,39.28,141.86,39.75,97,8,3.29,4/2/2018 11:52
+banjar,ID,Indonesia,-7.37,108.54,71.07,97,76,1.16,4/2/2018 11:52
+aykhal,RU,Russian Federation,65.95,111.51,-6.33,55,20,5.19,4/2/2018 11:52
+vao,NC,New Caledonia,-22.67,167.48,77.82,100,80,20.62,4/2/2018 11:52
+kiunga,PG,Papua New Guinea,-6.12,141.30,73.95,92,68,2.17,4/2/2018 11:52
+mabaruma,GY,Guyana,8.20,-59.78,83.31,82,80,8.43,4/2/2018 11:52
+klaksvik,FO,Faroe Islands,62.23,-6.59,30.20,80,80,18.34,4/2/2018 11:20
+chokurdakh,RU,Russian Federation,70.62,147.90,-5.88,43,12,3.74,4/2/2018 11:52
+langfang,CN,China,39.51,116.70,64.40,20,0,13.42,4/2/2018 11:00
+pinawa,CA,Canada,50.15,-95.88,9.15,90,0,6.53,4/2/2018 11:52
+puerto princesa,PH,Philippines,9.74,118.73,77.00,88,20,4.70,4/2/2018 11:00
+kurdzhinovo,RU,Russian Federation,43.99,40.96,34.17,86,88,1.83,4/2/2018 11:52
+codrington,AG,Antigua and Barbuda,24.81,-45.75,37.40,93,90,14.99,4/2/2018 11:00
+shintomi,JP,Japan,32.08,131.47,56.13,100,0,5.53,4/2/2018 11:52
+qaqortoq,GL,Greenland,60.72,-46.03,36.06,84,20,20.07,4/2/2018 11:52
+tuatapere,NZ,New Zealand,-46.13,167.69,52.53,100,36,20.62,4/2/2018 11:52
+cidreira,BR,Brazil,-30.17,-50.22,70.17,100,88,9.66,4/2/2018 11:52
+babol,IR,"Iran, Islamic Republic of",36.55,52.68,50.00,93,0,4.70,4/2/2018 11:00
+codrington,AG,Antigua and Barbuda,22.02,-51.67,77.55,38,24,28.12,4/2/2018 11:48
+nazilli,TR,Turkey,37.91,28.32,51.90,53,12,1.95,4/2/2018 11:52
+grand gaube,MU,Mauritius,-20.01,57.66,80.60,83,40,3.36,4/2/2018 11:00
+abnub,EG,Egypt,27.27,31.15,69.81,44,64,6.64,4/2/2018 11:52
+saint george,BM,Bermuda,32.38,-64.68,69.80,73,75,4.70,4/2/2018 10:55
+peniche,PT,Portugal,39.36,-9.38,59.00,87,75,13.87,4/2/2018 11:30
+port elizabeth,ZA,South Africa,-33.92,25.57,69.80,88,40,28.86,4/2/2018 11:18
+sao filipe,CV,Cabo Verde,14.90,-24.50,71.25,93,0,16.82,4/2/2018 11:52
+kargopol,RU,Russian Federation,61.51,38.95,44.25,100,92,26.78,4/2/2018 11:52
+port hueneme,US,United States,34.15,-119.20,58.59,77,90,6.93,4/2/2018 10:58
+eugene,US,United States,44.05,-123.10,45.46,61,75,2.95,4/2/2018 11:29
+grootfontein,NA,Namibia,-19.56,18.10,67.20,59,24,4.18,4/2/2018 11:52
+airai,PW,Palau,11.33,143.49,52.65,81,90,11.41,4/2/2018 11:00
+illoqqortoormiut,GL,Greenland,80.72,-9.35,83.31,82,80,8.43,4/2/2018 11:52
+fukue,JP,Japan,35.03,136.69,59.00,82,0,3.36,4/2/2018 11:00
+haines junction,CA,Canada,60.75,-137.51,13.74,67,68,7.43,4/2/2018 11:52
+taolanaro,MG,Madagascar,-51.86,63.29,52.35,100,88,21.52,4/2/2018 11:51
+ishigaki,JP,Japan,24.34,124.16,72.69,100,20,11.12,4/2/2018 11:52
+berlevag,NO,Norway,70.86,29.09,26.60,73,75,4.70,4/2/2018 10:50
+taolanaro,MG,Madagascar,-53.43,52.11,77.00,88,20,4.70,4/2/2018 11:00
+dunedin,NZ,New Zealand,-45.87,170.50,60.72,53,36,13.13,4/2/2018 11:49
+mahebourg,MU,Mauritius,-20.41,57.70,80.60,83,40,3.36,4/2/2018 11:00
+stromness,GB,United Kingdom,58.97,-3.30,36.59,59,20,10.29,4/2/2018 11:20
+umzimvubu,ZA,South Africa,-41.67,38.15,36.06,84,20,20.07,4/2/2018 11:52
+matara,LK,Sri Lanka,5.95,80.54,79.53,99,36,6.64,4/2/2018 11:52
+labutta,MM,Myanmar,15.65,90.29,77.55,38,24,28.12,4/2/2018 11:48
+bengkulu,ID,Indonesia,-19.22,87.94,37.11,98,75,16.11,4/2/2018 11:35
+mataura,PF,French Polynesia,-81.42,-160.43,59.00,87,75,13.87,4/2/2018 11:30
+mataura,PF,French Polynesia,-34.85,-153.47,78.45,100,92,6.42,4/2/2018 11:51
+akhisar,TR,Turkey,38.92,27.84,49.02,68,0,3.29,4/2/2018 11:52
+katsuura,JP,Japan,33.93,134.50,51.09,86,0,1.95,4/2/2018 11:53
+bani,DO,Dominican Republic,18.28,-70.33,89.60,52,40,9.17,4/2/2018 11:00
+algeciras,PH,Philippines,11.42,120.82,82.05,96,8,9.33,4/2/2018 11:53
+cape town,ZA,South Africa,-33.93,18.42,66.20,77,20,14.99,4/2/2018 11:00
+kytlym,RU,Russian Federation,60.40,58.89,48.20,93,75,4.70,4/2/2018 11:00
+kalmunai,LK,Sri Lanka,7.42,81.82,74.40,100,12,3.96,4/2/2018 11:52
+kuryk,KZ,Kazakhstan,43.18,51.68,48.93,70,0,19.51,4/2/2018 11:52
+vaitupu,WF,Wallis and Futuna,-3.58,-176.68,45.46,61,75,2.95,4/2/2018 11:29
+ferrol,ES,Spain,43.48,-8.23,54.21,76,20,19.46,4/2/2018 11:30
+illoqqortoormiut,GL,Greenland,76.84,-23.64,65.85,89,64,4.63,4/2/2018 11:51
+zhanatas,KZ,Kazakhstan,45.73,69.64,13.74,67,68,7.43,4/2/2018 11:52
+sentyabrskiy,RU,Russian Federation,37.09,155.51,52.35,100,88,21.52,4/2/2018 11:51
+asosa,ET,Ethiopia,10.07,34.53,67.02,83,0,3.62,4/2/2018 11:53
+poum,NC,New Caledonia,-20.23,164.02,77.28,100,92,13.24,4/2/2018 11:53
+ajdabiya,LY,Libya,30.75,20.22,65.85,47,24,9.10,4/2/2018 11:53
+airai,PW,Palau,18.40,135.79,48.20,93,75,4.70,4/2/2018 11:00
+bukama,CD,"Congo, The Democratic Republic of the",-9.20,25.85,78.45,65,8,6.42,4/2/2018 11:53
+mataura,PF,French Polynesia,-62.55,-153.87,36.06,84,20,20.07,4/2/2018 11:52
+palmer,US,United States,61.60,-149.11,31.98,60,1,33.33,4/2/2018 10:56
+mataura,PF,French Polynesia,-53.17,-151.34,37.40,86,90,6.71,4/2/2018 11:00
+vanavara,RU,Russian Federation,60.35,102.28,15.27,58,56,6.87,4/2/2018 11:53
+azuaga,ES,Spain,38.26,-5.68,58.65,76,88,13.02,4/2/2018 11:53
+santo angelo,BR,Brazil,-28.30,-54.26,74.22,89,76,7.99,4/2/2018 11:53
+payo,PH,Philippines,14.84,125.72,59.00,87,75,13.87,4/2/2018 11:30
+amderma,RU,Russian Federation,81.74,60.22,61.08,79,8,10.00,4/2/2018 11:52
+visnes,NO,Norway,59.36,5.22,36.88,80,40,2.24,4/2/2018 11:20
+wanlaweyn,SO,Somalia,2.62,44.89,79.62,77,36,8.55,4/2/2018 11:53
+viedma,AR,Argentina,-40.81,-62.99,80.52,47,0,13.80,4/2/2018 11:53
+hue,VN,Viet Nam,16.47,107.58,68.00,100,12,2.24,4/2/2018 11:00
+surin,TH,Thailand,14.88,103.49,76.02,80,92,4.41,4/2/2018 11:53
+hofn,IS,Iceland,64.25,-15.21,30.03,100,80,9.10,4/2/2018 11:53
+khasan,RU,Russian Federation,42.43,130.64,42.72,84,92,8.32,4/2/2018 11:53
+alcantara,PH,Philippines,9.97,123.41,76.56,100,64,5.75,4/2/2018 11:53
+olinda,BR,Brazil,-22.82,-43.41,86.43,62,40,12.75,4/2/2018 11:00
+hirara,JP,Japan,24.80,125.28,72.24,100,8,10.11,4/2/2018 11:53
+saint-joseph,RE,RÃ©union,-21.37,55.62,77.97,78,0,3.36,4/2/2018 11:30
+atambua,ID,Indonesia,-9.11,124.89,76.20,100,8,2.28,4/2/2018 11:53
+vardo,NO,Norway,70.37,31.11,30.09,100,75,19.46,4/2/2018 10:50
+nizhneyansk,RU,Russian Federation,72.42,133.71,36.06,84,20,20.07,4/2/2018 11:52
+lolua,TV,Tuvalu,-8.27,172.19,83.22,98,12,13.24,4/2/2018 11:50
+tsihombe,MG,Madagascar,-48.76,45.94,83.22,98,12,13.24,4/2/2018 11:50
+wilmington island,US,United States,32.00,-80.97,80.22,45,20,3.36,4/2/2018 11:15
+shache,CN,China,38.42,77.24,59.28,31,0,11.01,4/2/2018 11:53
+leningradskiy,RU,Russian Federation,69.38,178.42,12.93,74,0,3.40,4/2/2018 11:53
+bengkulu,ID,Indonesia,-6.69,101.45,65.85,89,64,4.63,4/2/2018 11:51
+aberdeen,US,United States,46.98,-123.82,47.03,70,90,12.75,4/2/2018 10:54
+fairbanks,US,United States,64.84,-147.72,7.29,60,1,3.74,4/2/2018 10:58
+kununurra,AU,Australia,-15.77,128.74,75.20,88,0,5.19,4/2/2018 11:30
+macon,US,United States,32.84,-83.63,78.80,32,1,5.82,4/2/2018 11:35
+skalistyy,RU,Russian Federation,73.75,35.18,80.52,47,0,13.80,4/2/2018 11:53
+samusu,WS,Samoa,-10.31,-162.75,80.60,83,40,3.36,4/2/2018 11:00
+maua,KE,Kenya,0.23,37.94,62.07,91,8,3.06,4/2/2018 11:53
+haukipudas,FI,Finland,65.17,25.50,32.00,88,88,11.41,4/2/2018 11:20
+ucluelet,CA,Canada,48.94,-125.55,44.60,45,20,8.05,4/2/2018 11:00
+russkiy aktash,RU,Russian Federation,55.04,52.12,35.60,74,0,13.42,4/2/2018 11:00
+ornskoldsvik,SE,Sweden,63.29,18.72,29.57,49,48,4.70,4/2/2018 11:20
+alice springs,AU,Australia,-23.70,133.88,64.40,45,0,8.05,4/2/2018 11:30
+shiyan,CN,China,32.65,110.78,53.97,78,0,2.73,4/2/2018 11:49
+aflu,DZ,Algeria,32.93,1.83,57.20,67,75,10.29,4/2/2018 11:30
+vygonichi,RU,Russian Federation,53.10,34.07,34.08,93,64,8.99,4/2/2018 11:53
+marti,CU,Cuba,21.15,-77.45,84.20,45,40,10.29,4/2/2018 10:50
+vaitupu,WF,Wallis and Futuna,-2.06,-179.80,8.60,65,75,17.22,4/2/2018 11:00
+aksarka,RU,Russian Federation,66.56,67.80,-1.47,70,44,11.45,4/2/2018 11:53
+yunjinghong,CN,China,22.07,99.57,-10.38,70,48,5.64,4/2/2018 11:50
+mataura,PF,French Polynesia,-78.55,-164.41,83.22,98,12,13.24,4/2/2018 11:50
+guymon,US,United States,36.68,-101.48,74.03,18,1,20.80,4/2/2018 11:35
+wadi maliz,TN,Tunisia,36.47,8.55,71.60,53,20,4.70,4/2/2018 11:00
+mammaste,EE,Estonia,58.07,27.05,32.00,95,90,14.99,4/2/2018 10:50
+ballina,IE,Ireland,54.11,-9.15,37.40,93,90,14.99,4/2/2018 11:00
+ulladulla,AU,Australia,-35.36,150.48,62.60,100,90,5.82,4/2/2018 11:00
+lanzhou,CN,China,36.06,103.82,51.80,32,0,13.42,4/2/2018 11:00
+plouzane,FR,France,48.38,-4.62,51.80,93,64,20.80,4/2/2018 11:30
+harigue,PH,Philippines,11.73,121.30,75.20,88,0,5.19,4/2/2018 11:30
+wanning,CN,China,18.80,110.40,73.23,100,56,5.19,4/2/2018 11:53
+zeya,RU,Russian Federation,53.74,127.27,18.15,45,68,11.90,4/2/2018 11:53
+ilulissat,GL,Greenland,69.22,-51.10,24.80,62,40,4.70,4/2/2018 10:50
+mount gambier,AU,Australia,-37.83,140.78,58.47,89,92,2.84,4/2/2018 11:52
+sorvag,FO,Faroe Islands,60.18,-10.99,26.60,73,0,4.70,4/2/2018 10:50
+linfen,CN,China,36.09,111.52,49.65,71,0,2.06,4/2/2018 11:53
+saint-tite,CA,Canada,46.73,-72.56,31.92,53,80,6.64,4/2/2018 11:53
+bure,ET,Ethiopia,10.35,36.90,35.60,74,0,13.42,4/2/2018 11:00
+pevek,RU,Russian Federation,69.70,170.27,18.33,72,20,10.45,4/2/2018 11:53
+kirakira,SB,Solomon Islands,-10.46,161.92,76.29,100,92,7.65,4/2/2018 11:53
+beringovskiy,RU,Russian Federation,63.05,179.32,28.05,96,76,5.19,4/2/2018 11:53
+niamey,NE,Niger,13.52,2.11,102.20,5,0,4.70,4/2/2018 11:00
+harlingen,NL,Netherlands,53.18,5.41,47.12,76,75,12.75,4/2/2018 11:25
+attawapiskat,CA,Canada,60.55,-80.40,84.20,66,20,2.24,4/2/2018 11:30
+ahipara,NZ,New Zealand,-35.17,173.16,50.73,100,0,3.40,4/2/2018 11:53
+manzanares,ES,Spain,39.00,-3.37,59.55,47,0,12.46,4/2/2018 11:53
+fevralsk,RU,Russian Federation,54.39,130.26,73.40,100,90,20.29,4/2/2018 11:00
+kutum,SD,Sudan,14.20,24.66,67.92,18,0,7.31,4/2/2018 11:53
+tokomaru,NZ,New Zealand,-40.47,175.51,56.13,92,100,9.22,4/2/2018 11:53
+anjiang,CN,China,27.32,110.14,63.42,100,92,2.28,4/2/2018 11:53
+sierpc,PL,Poland,52.85,19.67,37.77,80,0,11.79,4/2/2018 11:54
+taolanaro,MG,Madagascar,-42.31,52.41,74.03,18,1,20.80,4/2/2018 11:35
+guimaraes,PT,Portugal,41.44,-8.30,58.30,93,90,17.22,4/2/2018 11:30
+taolanaro,MG,Madagascar,-75.08,65.64,66.20,82,80,1.12,4/2/2018 11:00
+tommot,RU,Russian Federation,58.97,126.27,13.65,65,80,13.24,4/2/2018 11:54
+sola,VU,Vanuatu,-13.88,167.55,76.92,100,92,9.66,4/2/2018 11:54
+illoqqortoormiut,GL,Greenland,83.50,-30.06,51.80,93,64,20.80,4/2/2018 11:30
+illoqqortoormiut,GL,Greenland,87.14,-12.37,73.23,100,56,5.19,4/2/2018 11:53
+belushya guba,RU,Russian Federation,85.70,56.38,24.80,62,40,4.70,4/2/2018 10:50
+aki,JP,Japan,33.51,133.91,47.22,100,0,0.60,4/2/2018 11:54
+pumiao,CN,China,22.75,108.49,68.00,82,0,2.24,4/2/2018 11:00
+quatre cocos,MU,Mauritius,-20.21,57.76,80.60,83,40,3.36,4/2/2018 11:00
+porbandar,IN,India,21.64,69.61,74.04,86,0,8.32,4/2/2018 11:54
+zumarraga,ES,Spain,43.09,-2.32,65.30,44,75,16.11,4/2/2018 11:30
+hecun,CN,China,29.94,119.31,62.34,99,56,1.83,4/2/2018 11:54
+duz,TN,Tunisia,31.37,8.18,18.33,72,20,10.45,4/2/2018 11:53
+mataura,PF,French Polynesia,-46.16,-146.79,48.20,93,75,4.70,4/2/2018 11:00
+basco,PH,Philippines,20.45,121.97,75.84,100,88,14.70,4/2/2018 11:54
+illoqqortoormiut,GL,Greenland,85.20,-16.37,76.29,100,92,7.65,4/2/2018 11:53
+marcona,PE,Peru,-23.01,-84.58,28.05,96,76,5.19,4/2/2018 11:53
+aloleng,PH,Philippines,16.13,119.78,75.75,100,76,6.76,4/2/2018 11:54
+sao felix do xingu,BR,Brazil,-6.64,-51.99,84.12,76,36,2.73,4/2/2018 11:54
+umzimvubu,ZA,South Africa,-31.87,29.49,84.20,66,20,2.24,4/2/2018 11:30
+boksitogorsk,RU,Russian Federation,59.47,33.85,39.03,92,92,12.80,4/2/2018 11:54
+yate,NC,New Caledonia,-21.71,166.84,73.40,100,90,20.29,4/2/2018 11:00
+agropoli,IT,Italy,40.35,15.00,52.89,100,0,1.95,4/2/2018 11:49
+waipawa,NZ,New Zealand,-39.94,176.59,56.04,87,12,9.44,4/2/2018 11:54
+ostrovnoy,RU,Russian Federation,68.05,39.51,23.46,89,80,13.02,4/2/2018 11:54
+yanam,IN,India,16.73,82.22,80.43,82,0,9.22,4/2/2018 11:54
+kawhia,NZ,New Zealand,-38.07,174.82,64.32,96,88,8.55,4/2/2018 11:54
+grand river south east,MU,Mauritius,-18.65,75.14,78.45,100,92,6.42,4/2/2018 11:51
+souillac,MU,Mauritius,-20.52,57.52,80.60,83,40,3.36,4/2/2018 11:00
+illoqqortoormiut,GL,Greenland,73.27,-25.05,58.30,93,90,17.22,4/2/2018 11:30
+salalah,OM,Oman,17.01,54.10,80.60,78,75,3.36,4/2/2018 10:50
+mandurah,AU,Australia,-32.55,115.70,73.40,64,24,11.41,4/2/2018 11:30
+rio gallegos,AR,Argentina,-51.62,-69.22,64.40,63,40,2.24,4/2/2018 11:00
+rakiv lis,UA,Ukraine,51.62,24.92,37.77,88,88,16.71,4/2/2018 11:54
+bathsheba,BB,Barbados,13.22,-59.52,84.20,70,20,16.11,4/2/2018 11:00
+taolanaro,MG,Madagascar,-60.44,52.53,82.40,69,40,12.75,4/2/2018 11:00
+barentsburg,SJ,Svalbard and Jan Mayen,76.36,10.44,80.60,83,40,3.36,4/2/2018 11:00
+berezovyy,RU,Russian Federation,51.67,135.70,21.93,54,0,10.00,4/2/2018 11:54
+lisala,CD,"Congo, The Democratic Republic of the",2.15,21.52,74.22,97,36,2.62,4/2/2018 11:54
+hollins,US,United States,37.35,-79.95,54.77,59,90,8.05,4/2/2018 11:15
+mahon,ES,Spain,39.44,5.88,75.84,100,88,14.70,4/2/2018 11:54
+lujiang,CN,China,31.26,117.28,64.40,100,0,6.71,4/2/2018 11:00
+nouadhibou,MR,Mauritania,20.93,-17.03,68.00,68,0,19.46,4/2/2018 11:00
+concordia,MX,Mexico,23.29,-106.07,82.40,48,5,5.82,4/2/2018 10:40
+pinega,RU,Russian Federation,64.70,43.39,31.20,80,92,12.80,4/2/2018 11:54
+batemans bay,AU,Australia,-35.71,150.18,61.62,100,68,3.96,4/2/2018 11:54
+mataura,PF,French Polynesia,-38.68,-152.01,56.04,87,12,9.44,4/2/2018 11:54
+nizhneyansk,RU,Russian Federation,81.37,137.39,80.43,82,0,9.22,4/2/2018 11:54
+guia de isora,ES,Spain,28.21,-16.78,64.31,72,20,12.75,4/2/2018 11:30
+mataura,PF,French Polynesia,-53.67,-155.36,64.32,96,88,8.55,4/2/2018 11:54
+belaya gora,RU,Russian Federation,68.54,146.19,1.14,51,8,6.42,4/2/2018 11:54
+acarau,BR,Brazil,7.20,-39.32,21.20,73,1,19.46,4/2/2018 10:53
+bauru,BR,Brazil,-22.32,-49.07,81.51,79,44,11.68,4/2/2018 11:54
+grindavik,IS,Iceland,63.84,-22.43,32.86,86,90,13.87,4/2/2018 11:25
+singaparna,ID,Indonesia,-7.35,108.11,66.57,96,24,1.61,4/2/2018 11:54
+iqaluit,CA,Canada,63.75,-68.52,33.80,74,75,27.51,4/2/2018 11:00
+grand river south east,MU,Mauritius,-25.04,75.15,82.40,69,40,12.75,4/2/2018 11:00
+margate,ZA,South Africa,-30.86,30.37,78.45,87,68,18.50,4/2/2018 11:54
+umm kaddadah,SD,Sudan,13.60,26.69,72.15,11,0,7.09,4/2/2018 11:54
+togur,RU,Russian Federation,58.36,82.83,22.47,92,64,7.65,4/2/2018 11:54
+oskemen,KZ,Kazakhstan,49.96,82.61,30.20,80,90,2.24,4/2/2018 11:00
+muros,ES,Spain,42.77,-9.06,51.80,93,75,16.11,4/2/2018 11:30
+sept-iles,CA,Canada,50.20,-66.38,26.60,25,20,13.87,4/2/2018 11:00
+mortka,RU,Russian Federation,59.33,66.02,28.50,84,68,4.63,4/2/2018 11:54
+candido mendes,BR,Brazil,-1.45,-45.72,83.31,97,80,11.34,4/2/2018 11:54
+weatherford,US,United States,32.76,-97.80,45.27,87,90,4.63,4/2/2018 11:15
+samusu,WS,Samoa,-11.25,-163.70,85.62,30,5,14.99,4/2/2018 10:46
+mataura,PF,French Polynesia,-54.06,-143.28,56.04,87,12,9.44,4/2/2018 11:54
+manaure,CO,Colombia,11.78,-72.45,84.20,70,40,13.87,4/2/2018 11:00
+cabedelo,BR,Brazil,-6.97,-34.84,86.00,66,20,12.75,4/2/2018 11:00
+khorixas,NA,Namibia,-20.37,14.96,70.62,87,88,4.63,4/2/2018 11:54
+adrar,DZ,Algeria,27.87,-0.29,82.40,14,90,42.50,4/2/2018 11:00
+arman,RU,Russian Federation,59.70,150.17,24.80,100,90,8.95,4/2/2018 11:00
+katobu,ID,Indonesia,-4.94,122.53,82.59,94,24,7.31,4/2/2018 11:54
+vanimo,PG,Papua New Guinea,-2.67,141.30,82.95,100,92,13.13,4/2/2018 11:54
+amderma,RU,Russian Federation,73.12,64.31,82.40,69,40,12.75,4/2/2018 11:00
+aden,YE,Yemen,12.79,45.03,80.97,97,0,10.89,4/2/2018 11:54
+temaraia,KI,Kiribati,-1.58,172.02,2.85,84,0,6.53,4/2/2018 11:51
+comodoro rivadavia,AR,Argentina,-45.87,-67.48,80.60,36,20,21.92,4/2/2018 11:00
+mataura,PF,French Polynesia,-89.27,-166.06,22.47,92,64,7.65,4/2/2018 11:54
+mumford,GH,Ghana,5.26,-0.76,82.05,84,0,12.12,4/2/2018 11:55
+ankazoabo,MG,Madagascar,-22.29,44.51,72.51,80,44,3.51,4/2/2018 11:55
+illoqqortoormiut,GL,Greenland,76.63,-13.64,45.27,87,90,4.63,4/2/2018 11:15
+collie,AU,Australia,-33.36,116.15,65.76,82,0,9.66,4/2/2018 11:55
+san cristobal,EC,Ecuador,-1.02,-79.44,65.67,100,92,3.40,4/2/2018 11:55
+batagay-alyta,RU,Russian Federation,67.80,130.41,4.47,73,76,3.85,4/2/2018 11:55
+kemijarvi,FI,Finland,68.10,27.39,-10.38,70,48,5.64,4/2/2018 11:50
+ust-nera,RU,Russian Federation,64.57,143.24,5.73,73,76,2.62,4/2/2018 11:55
+umzimvubu,ZA,South Africa,-52.64,47.01,86.00,66,20,12.75,4/2/2018 11:00
+georgiyevka,KZ,Kazakhstan,43.04,74.71,36.42,86,68,2.95,4/2/2018 11:55
+stykkisholmur,IS,Iceland,65.08,-22.73,34.17,100,44,12.01,4/2/2018 11:55
+yurimaguas,PE,Peru,-5.90,-76.10,75.20,100,90,6.93,4/2/2018 11:00
+inverness,GB,United Kingdom,57.48,-4.23,38.07,93,40,12.75,4/2/2018 11:20
+barentsburg,SJ,Svalbard and Jan Mayen,89.03,-1.26,91.40,63,75,5.82,4/2/2018 11:00
+itarema,BR,Brazil,-2.92,-39.92,79.71,95,68,8.55,4/2/2018 11:55
+samusu,WS,Samoa,-3.31,-164.47,84.20,66,75,4.18,4/2/2018 12:00
+bengkulu,ID,Indonesia,-13.23,96.12,77.97,78,0,4.70,4/2/2018 11:00
+inuvik,CA,Canada,68.36,-133.71,1.29,71,75,13.87,4/2/2018 11:00
+marcona,PE,Peru,-20.70,-81.49,70.57,94,90,12.75,4/2/2018 11:36
+umzimvubu,ZA,South Africa,-41.60,37.37,65.85,89,64,4.63,4/2/2018 11:51
+fredericksburg,US,United States,38.30,-77.46,49.84,71,90,9.17,4/2/2018 11:15
+guaraniacu,BR,Brazil,-25.10,-52.88,78.80,65,40,9.17,4/2/2018 11:00
+tabuk,SA,Saudi Arabia,28.38,36.58,82.40,14,0,6.93,4/2/2018 11:00
+ust-ishim,RU,Russian Federation,57.69,71.17,22.20,81,0,8.21,4/2/2018 11:55
+mataura,PF,French Polynesia,-72.93,-157.93,38.07,93,40,12.75,4/2/2018 11:20
+amderma,RU,Russian Federation,80.54,65.78,80.43,100,76,17.60,4/2/2018 11:51
+rawson,AR,Argentina,-43.30,-65.11,87.00,27,0,10.67,4/2/2018 11:55
+seydi,TM,Turkmenistan,39.48,62.91,56.49,62,68,12.46,4/2/2018 11:55
+tambovka,RU,Russian Federation,47.32,47.38,44.61,66,0,19.95,4/2/2018 11:55
+otane,NZ,New Zealand,-39.89,176.62,43.17,93,20,3.29,4/2/2018 11:55
+carutapera,BR,Brazil,-1.20,-46.02,83.04,84,92,8.10,4/2/2018 11:55
+tsihombe,MG,Madagascar,-37.20,47.57,1.29,71,75,13.87,4/2/2018 11:00
+chuy,UY,Uruguay,-33.69,-53.46,73.59,88,68,11.56,4/2/2018 11:55
+amderma,RU,Russian Federation,89.48,62.46,-2.21,53,20,8.05,4/2/2018 11:00
+talcahuano,CL,Chile,-36.72,-73.12,55.40,87,90,11.41,4/2/2018 11:00
+taolanaro,MG,Madagascar,-54.38,59.04,70.57,94,90,12.75,4/2/2018 11:36
+gorgan,IR,"Iran, Islamic Republic of",36.84,54.43,46.40,93,0,1.95,4/2/2018 11:00
+taolanaro,MG,Madagascar,-48.10,56.26,67.92,18,0,7.31,4/2/2018 11:53
+altamont,US,United States,37.19,-95.30,38.10,93,90,4.70,4/2/2018 11:45
+sibanicu,CU,Cuba,21.23,-77.53,84.20,45,40,10.29,4/2/2018 10:50
+teknaf,BD,Bangladesh,20.86,92.31,75.39,84,64,2.39,4/2/2018 11:55
+tanout,NE,Niger,14.97,8.88,86.37,15,0,4.41,4/2/2018 11:55
+guilin,CN,China,25.28,110.29,68.00,94,75,2.39,4/2/2018 11:00
+egvekinot,RU,Russian Federation,66.32,-179.17,7.80,66,0,2.28,4/2/2018 11:55
+liuzhou,CN,China,24.32,109.41,68.82,81,32,3.18,4/2/2018 11:55
+mys shmidta,RU,Russian Federation,81.81,-178.52,82.40,14,0,6.93,4/2/2018 11:00
+mataura,PF,French Polynesia,-62.89,-159.94,73.40,100,90,20.29,4/2/2018 11:00
+san patricio,MX,Mexico,19.22,-104.70,84.20,66,20,9.17,4/2/2018 10:46
+sao joao da barra,BR,Brazil,-21.64,-41.05,89.60,52,20,9.17,4/2/2018 11:00
+conceicao da barra,BR,Brazil,-18.59,-39.73,83.40,80,8,9.78,4/2/2018 11:53
+mataura,PF,French Polynesia,-53.86,-146.14,80.43,100,76,17.60,4/2/2018 11:51

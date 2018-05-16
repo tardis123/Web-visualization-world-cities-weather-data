@@ -1,0 +1,6193 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Weather Visualizations</title>
+
+		<!-- References to Bootstrap css and style css -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+		<script
+		src="https://code.jquery.com/jquery-3.2.1.min.js"
+		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		crossorigin="anonymous"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		
+		<style>
+		table {
+		border-collapse: collapse;
+		border-spacing: 0;
+		width: 100%;
+		border: 1px solid #ddd;
+		}
+
+	th, td {
+		text-align: left;
+		padding: 16px;
+		font-size: 10px
+		}
+
+	th {
+		background-color: gray
+		}
+		
+	tr:nth-child(even) {
+		background-color: lightblue
+		}
+		</style>
+	</head>
+
+<body style="background-color: lightgray">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	  </button>
+	  <!-- emply col to move over text -->
+	  <div class="col-md-1"></div>
+	  <div class="col-md-1"></div>
+	  <div class="col-md-1"></div>
+	  <a class="navbar-brand" href="index.html" style="color: white; background-color: blue;">
+		<span class="nav-color">Latitude</span>
+	  </a>
+	</div>
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  
+  <ul class="nav navbar-nav navbar-right">
+	<li class="dropdown">
+	  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots <span class="caret"></span></a>
+	  <ul class="dropdown-menu">
+		<li><a href="temperature.html">Temperature</a></li>
+		<li><a href="humidity.html">Humidity</a></li>
+		<li><a href="cloudiness.html">Cloudiness</a></li>
+		<li><a href="windspeed.html">Wind speed</a></li>
+	  </ul>
+	</li>
+	<li><a href="comparison.html">Comparisons</a></li>
+	<li><a href="data.html">Weather data table</a></li>
+	
+  </ul>
+</div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
+<div class="container-fluid">
+  <div class="row">
+	<div class="col-md-1"></div>
+	<div class="col-md-10">
+			<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="row">
+					  <h2>World cities weather data 05/13/18</h2>
+					  <hr>
+					  <div class="col-md-12">
+							<table class="table table-bordered table-hover table-condensed" font size = 8>
+								<thead><tr><th title="Field #1">City</th>
+								<th title="Field #2">Country Code</th>
+								<th title="Field #3">Country</th>
+								<th title="Field #4">Lat</th>
+								<th title="Field #5">Lon</th>
+								<th title="Field #6">Temp (<span>&#8457;</span>)</th>
+								<th title="Field #7">Humidity (%)</th>
+								<th title="Field #8">Cloudiness (%)</th>
+								<th title="Field #9">Wind Speed (mph)</th>
+								<th title="Field #10">Date</th>
+								</tr></thead>
+								<tbody><tr>
+								<td>zhuhai</td>
+								<td>CN</td>
+								<td>China</td>
+								<td align="right">40.71</td>
+								<td align="right">112.04</td>
+								<td align="right">42.8</td>
+								<td align="right">33</td>
+								<td align="right">20</td>
+								<td align="right">13.42</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>gursarai</td>
+								<td>IN</td>
+								<td>India</td>
+								<td align="right">25.62</td>
+								<td align="right">79.18</td>
+								<td align="right">78.72</td>
+								<td align="right">35</td>
+								<td align="right">0</td>
+								<td align="right">9.44</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>torbay</td>
+								<td>CA</td>
+								<td>Canada</td>
+								<td align="right">47.66</td>
+								<td align="right">-52.73</td>
+								<td align="right">41</td>
+								<td align="right">48</td>
+								<td align="right">20</td>
+								<td align="right">34.45</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>punta arenas</td>
+								<td>CL</td>
+								<td>Chile</td>
+								<td align="right">-53.16</td>
+								<td align="right">-70.91</td>
+								<td align="right">52.65</td>
+								<td align="right">81</td>
+								<td align="right">90</td>
+								<td align="right">11.41</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>khartoum</td>
+								<td>SD</td>
+								<td>Sudan</td>
+								<td align="right">15.59</td>
+								<td align="right">32.54</td>
+								<td align="right">89.6</td>
+								<td align="right">6</td>
+								<td align="right">0</td>
+								<td align="right">12.75</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>victoria</td>
+								<td>SC</td>
+								<td>Seychelles</td>
+								<td align="right">-4.62</td>
+								<td align="right">55.45</td>
+								<td align="right">82.4</td>
+								<td align="right">83</td>
+								<td align="right">20</td>
+								<td align="right">3.36</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>fort nelson</td>
+								<td>CA</td>
+								<td>Canada</td>
+								<td align="right">58.81</td>
+								<td align="right">-122.69</td>
+								<td align="right">19.4</td>
+								<td align="right">57</td>
+								<td align="right">90</td>
+								<td align="right">3.36</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>nikolskoye</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">59.7</td>
+								<td align="right">30.79</td>
+								<td align="right">37.4</td>
+								<td align="right">86</td>
+								<td align="right">90</td>
+								<td align="right">6.71</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>butaritari</td>
+								<td>KI</td>
+								<td>Kiribati</td>
+								<td align="right">3.07</td>
+								<td align="right">172.79</td>
+								<td align="right">83.22</td>
+								<td align="right">98</td>
+								<td align="right">12</td>
+								<td align="right">13.24</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>warrnambool</td>
+								<td>AU</td>
+								<td>Australia</td>
+								<td align="right">-38.38</td>
+								<td align="right">142.48</td>
+								<td align="right">60.81</td>
+								<td align="right">95</td>
+								<td align="right">92</td>
+								<td align="right">8.88</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>arraial do cabo</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-22.97</td>
+								<td align="right">-42.02</td>
+								<td align="right">91.4</td>
+								<td align="right">63</td>
+								<td align="right">75</td>
+								<td align="right">5.82</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>acapulco</td>
+								<td>MX</td>
+								<td>Mexico</td>
+								<td align="right">16.86</td>
+								<td align="right">-99.88</td>
+								<td align="right">82.4</td>
+								<td align="right">74</td>
+								<td align="right">5</td>
+								<td align="right">8.05</td>
+								<td>4/2/2018 10:45</td>
+								</tr>
+								<tr>
+								<td>manama</td>
+								<td>BH</td>
+								<td>Bahrain</td>
+								<td align="right">26.22</td>
+								<td align="right">50.58</td>
+								<td align="right">76.19</td>
+								<td align="right">47</td>
+								<td align="right">0</td>
+								<td align="right">5.82</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>hobart</td>
+								<td>AU</td>
+								<td>Australia</td>
+								<td align="right">-42.88</td>
+								<td align="right">147.33</td>
+								<td align="right">57.2</td>
+								<td align="right">67</td>
+								<td align="right">75</td>
+								<td align="right">10.29</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>ushuaia</td>
+								<td>AR</td>
+								<td>Argentina</td>
+								<td align="right">-54.81</td>
+								<td align="right">-68.31</td>
+								<td align="right">48.2</td>
+								<td align="right">93</td>
+								<td align="right">75</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>tigil</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">57.8</td>
+								<td align="right">158.67</td>
+								<td align="right">24.27</td>
+								<td align="right">92</td>
+								<td align="right">80</td>
+								<td align="right">3.62</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>kodiak</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">39.95</td>
+								<td align="right">-94.76</td>
+								<td align="right">28.4</td>
+								<td align="right">92</td>
+								<td align="right">90</td>
+								<td align="right">11.41</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>busselton</td>
+								<td>AU</td>
+								<td>Australia</td>
+								<td align="right">-33.64</td>
+								<td align="right">115.35</td>
+								<td align="right">70.44</td>
+								<td align="right">95</td>
+								<td align="right">20</td>
+								<td align="right">8.66</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>yerbogachen</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">61.28</td>
+								<td align="right">108.01</td>
+								<td align="right">10.41</td>
+								<td align="right">72</td>
+								<td align="right">64</td>
+								<td align="right">5.08</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>vaini</td>
+								<td>TO</td>
+								<td>Tonga</td>
+								<td align="right">-21.2</td>
+								<td align="right">-175.2</td>
+								<td align="right">73.4</td>
+								<td align="right">100</td>
+								<td align="right">90</td>
+								<td align="right">20.29</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>rocha</td>
+								<td>UY</td>
+								<td>Uruguay</td>
+								<td align="right">-34.48</td>
+								<td align="right">-54.34</td>
+								<td align="right">71.16</td>
+								<td align="right">77</td>
+								<td align="right">88</td>
+								<td align="right">10.11</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>talnakh</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">69.49</td>
+								<td align="right">88.39</td>
+								<td align="right">-10.38</td>
+								<td align="right">70</td>
+								<td align="right">48</td>
+								<td align="right">5.64</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>pisco</td>
+								<td>PE</td>
+								<td>Peru</td>
+								<td align="right">-13.71</td>
+								<td align="right">-76.2</td>
+								<td align="right">77</td>
+								<td align="right">61</td>
+								<td align="right">0</td>
+								<td align="right">8.05</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>sinnamary</td>
+								<td>GF</td>
+								<td>French Guiana</td>
+								<td align="right">5.38</td>
+								<td align="right">-52.96</td>
+								<td align="right">79.71</td>
+								<td align="right">100</td>
+								<td align="right">92</td>
+								<td align="right">5.86</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>carnarvon</td>
+								<td>AU</td>
+								<td>Australia</td>
+								<td align="right">-24.87</td>
+								<td align="right">113.63</td>
+								<td align="right">78.9</td>
+								<td align="right">96</td>
+								<td align="right">8</td>
+								<td align="right">4.41</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>ribeira grande</td>
+								<td>PT</td>
+								<td>Portugal</td>
+								<td align="right">38.52</td>
+								<td align="right">-28.7</td>
+								<td align="right">60.8</td>
+								<td align="right">63</td>
+								<td align="right">20</td>
+								<td align="right">24.16</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>conselheiro pena</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-19.17</td>
+								<td align="right">-41.47</td>
+								<td align="right">86.1</td>
+								<td align="right">61</td>
+								<td align="right">0</td>
+								<td align="right">3.62</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>tiksi</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">71.64</td>
+								<td align="right">128.87</td>
+								<td align="right">-10.65</td>
+								<td align="right">36</td>
+								<td align="right">36</td>
+								<td align="right">2.73</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>makakilo city</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">21.35</td>
+								<td align="right">-158.09</td>
+								<td align="right">73.92</td>
+								<td align="right">100</td>
+								<td align="right">75</td>
+								<td align="right">11.41</td>
+								<td>4/2/2018 11:42</td>
+								</tr>
+								<tr>
+								<td>roma</td>
+								<td>AU</td>
+								<td>Australia</td>
+								<td align="right">-26.57</td>
+								<td align="right">148.79</td>
+								<td align="right">67.56</td>
+								<td align="right">88</td>
+								<td align="right">0</td>
+								<td align="right">7.2</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>ongandjera</td>
+								<td>NA</td>
+								<td>Namibia</td>
+								<td align="right">-17.88</td>
+								<td align="right">15.07</td>
+								<td align="right">69.36</td>
+								<td align="right">90</td>
+								<td align="right">64</td>
+								<td align="right">3.06</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>east london</td>
+								<td>ZA</td>
+								<td>South Africa</td>
+								<td align="right">-33.02</td>
+								<td align="right">27.91</td>
+								<td align="right">69.8</td>
+								<td align="right">83</td>
+								<td align="right">20</td>
+								<td align="right">12.75</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>port lincoln</td>
+								<td>AU</td>
+								<td>Australia</td>
+								<td align="right">-34.72</td>
+								<td align="right">135.86</td>
+								<td align="right">61.89</td>
+								<td align="right">98</td>
+								<td align="right">92</td>
+								<td align="right">4.97</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>alihe</td>
+								<td>CN</td>
+								<td>China</td>
+								<td align="right">50.57</td>
+								<td align="right">123.73</td>
+								<td align="right">22.83</td>
+								<td align="right">37</td>
+								<td align="right">0</td>
+								<td align="right">10.22</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>albany</td>
+								<td>AU</td>
+								<td>Australia</td>
+								<td align="right">-35.02</td>
+								<td align="right">117.88</td>
+								<td align="right">59.55</td>
+								<td align="right">94</td>
+								<td align="right">20</td>
+								<td align="right">7.54</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>sri aman</td>
+								<td>MY</td>
+								<td>Malaysia</td>
+								<td align="right">1.24</td>
+								<td align="right">111.46</td>
+								<td align="right">75.2</td>
+								<td align="right">94</td>
+								<td align="right">75</td>
+								<td align="right">2.17</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>troina</td>
+								<td>IT</td>
+								<td>Italy</td>
+								<td align="right">37.79</td>
+								<td align="right">14.6</td>
+								<td align="right">57.42</td>
+								<td align="right">76</td>
+								<td align="right">0</td>
+								<td align="right">5.82</td>
+								<td>4/2/2018 11:20</td>
+								</tr>
+								<tr>
+								<td>copiapo</td>
+								<td>CL</td>
+								<td>Chile</td>
+								<td align="right">-27.37</td>
+								<td align="right">-70.33</td>
+								<td align="right">71.6</td>
+								<td align="right">46</td>
+								<td align="right">0</td>
+								<td align="right">6.93</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>guerrero negro</td>
+								<td>MX</td>
+								<td>Mexico</td>
+								<td align="right">27.97</td>
+								<td align="right">-114.04</td>
+								<td align="right">63.51</td>
+								<td align="right">76</td>
+								<td align="right">92</td>
+								<td align="right">6.87</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>coquimbo</td>
+								<td>CL</td>
+								<td>Chile</td>
+								<td align="right">-29.95</td>
+								<td align="right">-71.34</td>
+								<td align="right">66.2</td>
+								<td align="right">63</td>
+								<td align="right">20</td>
+								<td align="right">8.05</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>jamestown</td>
+								<td>SH</td>
+								<td>Saint Helena, Ascension and Tristan da Cunha</td>
+								<td align="right">-15.94</td>
+								<td align="right">-5.72</td>
+								<td align="right">75.39</td>
+								<td align="right">100</td>
+								<td align="right">20</td>
+								<td align="right">14.7</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>kapaa</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">22.08</td>
+								<td align="right">-159.32</td>
+								<td align="right">70.57</td>
+								<td align="right">94</td>
+								<td align="right">90</td>
+								<td align="right">12.75</td>
+								<td>4/2/2018 11:36</td>
+								</tr>
+								<tr>
+								<td>upernavik</td>
+								<td>GL</td>
+								<td>Greenland</td>
+								<td align="right">72.79</td>
+								<td align="right">-56.15</td>
+								<td align="right">23.19</td>
+								<td align="right">93</td>
+								<td align="right">8</td>
+								<td align="right">13.13</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>laguna</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-37.04</td>
+								<td align="right">-37.29</td>
+								<td align="right">52.65</td>
+								<td align="right">81</td>
+								<td align="right">90</td>
+								<td align="right">11.41</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>taolanaro</td>
+								<td>MG</td>
+								<td>Madagascar</td>
+								<td align="right">-49.78</td>
+								<td align="right">52.4</td>
+								<td align="right">60.81</td>
+								<td align="right">95</td>
+								<td align="right">92</td>
+								<td align="right">8.88</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>jiayuguan</td>
+								<td>CN</td>
+								<td>China</td>
+								<td align="right">39.77</td>
+								<td align="right">98.29</td>
+								<td align="right">28.05</td>
+								<td align="right">68</td>
+								<td align="right">0</td>
+								<td align="right">1.39</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>battle creek</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">42.32</td>
+								<td align="right">-85.18</td>
+								<td align="right">39.49</td>
+								<td align="right">38</td>
+								<td align="right">1</td>
+								<td align="right">10.29</td>
+								<td>4/2/2018 11:16</td>
+								</tr>
+								<tr>
+								<td>new norfolk</td>
+								<td>AU</td>
+								<td>Australia</td>
+								<td align="right">-42.78</td>
+								<td align="right">147.06</td>
+								<td align="right">57.2</td>
+								<td align="right">67</td>
+								<td align="right">75</td>
+								<td align="right">10.29</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>aklavik</td>
+								<td>CA</td>
+								<td>Canada</td>
+								<td align="right">68.22</td>
+								<td align="right">-135.01</td>
+								<td align="right">3.94</td>
+								<td align="right">71</td>
+								<td align="right">40</td>
+								<td align="right">17.22</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>uthal</td>
+								<td>PK</td>
+								<td>Pakistan</td>
+								<td align="right">25.81</td>
+								<td align="right">66.62</td>
+								<td align="right">73.32</td>
+								<td align="right">91</td>
+								<td align="right">20</td>
+								<td align="right">5.08</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>georgetown</td>
+								<td>SH</td>
+								<td>Saint Helena, Ascension and Tristan da Cunha</td>
+								<td align="right">-7.93</td>
+								<td align="right">-14.42</td>
+								<td align="right">79.8</td>
+								<td align="right">100</td>
+								<td align="right">0</td>
+								<td align="right">9.33</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>deputatskiy</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">69.3</td>
+								<td align="right">139.9</td>
+								<td align="right">-16.68</td>
+								<td align="right">46</td>
+								<td align="right">8</td>
+								<td align="right">2.17</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>tsihombe</td>
+								<td>MG</td>
+								<td>Madagascar</td>
+								<td align="right">-41.48</td>
+								<td align="right">45.2</td>
+								<td align="right">73.4</td>
+								<td align="right">100</td>
+								<td align="right">90</td>
+								<td align="right">20.29</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>saldanha</td>
+								<td>ZA</td>
+								<td>South Africa</td>
+								<td align="right">-33.01</td>
+								<td align="right">17.94</td>
+								<td align="right">64.4</td>
+								<td align="right">77</td>
+								<td align="right">20</td>
+								<td align="right">6.93</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>tirat karmel</td>
+								<td>IL</td>
+								<td>Israel</td>
+								<td align="right">32.76</td>
+								<td align="right">34.97</td>
+								<td align="right">65.94</td>
+								<td align="right">100</td>
+								<td align="right">36</td>
+								<td align="right">4.18</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>quang ngai</td>
+								<td>VN</td>
+								<td>Viet Nam</td>
+								<td align="right">15.12</td>
+								<td align="right">108.8</td>
+								<td align="right">56.94</td>
+								<td align="right">91</td>
+								<td align="right">0</td>
+								<td align="right">2.62</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>narsaq</td>
+								<td>GL</td>
+								<td>Greenland</td>
+								<td align="right">60.91</td>
+								<td align="right">-46.05</td>
+								<td align="right">30.12</td>
+								<td align="right">81</td>
+								<td align="right">36</td>
+								<td align="right">5.86</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>ngunguru</td>
+								<td>NZ</td>
+								<td>New Zealand</td>
+								<td align="right">-35.62</td>
+								<td align="right">174.5</td>
+								<td align="right">63.69</td>
+								<td align="right">100</td>
+								<td align="right">8</td>
+								<td align="right">3.06</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>pleasant point</td>
+								<td>NZ</td>
+								<td>New Zealand</td>
+								<td align="right">-44.26</td>
+								<td align="right">171.13</td>
+								<td align="right">61.62</td>
+								<td align="right">70</td>
+								<td align="right">44</td>
+								<td align="right">12.01</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>livramento</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-3.03</td>
+								<td align="right">-60.18</td>
+								<td align="right">80.6</td>
+								<td align="right">74</td>
+								<td align="right">75</td>
+								<td align="right">6.93</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>edeia</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-17.34</td>
+								<td align="right">-49.93</td>
+								<td align="right">87.27</td>
+								<td align="right">62</td>
+								<td align="right">36</td>
+								<td align="right">3.18</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>mampong</td>
+								<td>GH</td>
+								<td>Ghana</td>
+								<td align="right">7.06</td>
+								<td align="right">-1.4</td>
+								<td align="right">86.37</td>
+								<td align="right">71</td>
+								<td align="right">48</td>
+								<td align="right">5.19</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>cooma</td>
+								<td>AU</td>
+								<td>Australia</td>
+								<td align="right">-36.24</td>
+								<td align="right">149.13</td>
+								<td align="right">54.33</td>
+								<td align="right">97</td>
+								<td align="right">88</td>
+								<td align="right">2.17</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>barrow</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">39.51</td>
+								<td align="right">-90.4</td>
+								<td align="right">37.11</td>
+								<td align="right">98</td>
+								<td align="right">75</td>
+								<td align="right">16.11</td>
+								<td>4/2/2018 11:35</td>
+								</tr>
+								<tr>
+								<td>opuwo</td>
+								<td>NA</td>
+								<td>Namibia</td>
+								<td align="right">-18.06</td>
+								<td align="right">13.84</td>
+								<td align="right">64.05</td>
+								<td align="right">97</td>
+								<td align="right">64</td>
+								<td align="right">1.72</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>najran</td>
+								<td>SA</td>
+								<td>Saudi Arabia</td>
+								<td align="right">17.54</td>
+								<td align="right">44.22</td>
+								<td align="right">78.8</td>
+								<td align="right">27</td>
+								<td align="right">75</td>
+								<td align="right">13.87</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>puerto ayora</td>
+								<td>EC</td>
+								<td>Ecuador</td>
+								<td align="right">-0.74</td>
+								<td align="right">-90.35</td>
+								<td align="right">82.4</td>
+								<td align="right">69</td>
+								<td align="right">40</td>
+								<td align="right">12.75</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>mataura</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-67.16</td>
+								<td align="right">-162.46</td>
+								<td align="right">67.56</td>
+								<td align="right">88</td>
+								<td align="right">0</td>
+								<td align="right">7.2</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>bethel</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">60.79</td>
+								<td align="right">-161.76</td>
+								<td align="right">21.2</td>
+								<td align="right">73</td>
+								<td align="right">1</td>
+								<td align="right">19.46</td>
+								<td>4/2/2018 10:53</td>
+								</tr>
+								<tr>
+								<td>clyde river</td>
+								<td>CA</td>
+								<td>Canada</td>
+								<td align="right">70.47</td>
+								<td align="right">-68.59</td>
+								<td align="right">10.4</td>
+								<td align="right">85</td>
+								<td align="right">90</td>
+								<td align="right">16.11</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>bluff</td>
+								<td>NZ</td>
+								<td>New Zealand</td>
+								<td align="right">-46.6</td>
+								<td align="right">168.33</td>
+								<td align="right">55.95</td>
+								<td align="right">100</td>
+								<td align="right">64</td>
+								<td align="right">29.46</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>marawi</td>
+								<td>SD</td>
+								<td>Sudan</td>
+								<td align="right">18.48</td>
+								<td align="right">31.82</td>
+								<td align="right">69.72</td>
+								<td align="right">20</td>
+								<td align="right">0</td>
+								<td align="right">3.62</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>tura</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">64.27</td>
+								<td align="right">100.22</td>
+								<td align="right">9.69</td>
+								<td align="right">66</td>
+								<td align="right">68</td>
+								<td align="right">5.41</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>marmaris</td>
+								<td>TR</td>
+								<td>Turkey</td>
+								<td align="right">36.85</td>
+								<td align="right">28.27</td>
+								<td align="right">58.35</td>
+								<td align="right">62</td>
+								<td align="right">0</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 11:20</td>
+								</tr>
+								<tr>
+								<td>nizwa</td>
+								<td>OM</td>
+								<td>Oman</td>
+								<td align="right">22.93</td>
+								<td align="right">57.53</td>
+								<td align="right">66.84</td>
+								<td align="right">62</td>
+								<td align="right">56</td>
+								<td align="right">4.07</td>
+								<td>4/2/2018 11:48</td>
+								</tr>
+								<tr>
+								<td>santo antonio do ica</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-3.1</td>
+								<td align="right">-67.94</td>
+								<td align="right">90.6</td>
+								<td align="right">63</td>
+								<td align="right">44</td>
+								<td align="right">3.96</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>maiduguri</td>
+								<td>NG</td>
+								<td>Nigeria</td>
+								<td align="right">11.84</td>
+								<td align="right">13.15</td>
+								<td align="right">88.89</td>
+								<td align="right">22</td>
+								<td align="right">0</td>
+								<td align="right">6.2</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>longyearbyen</td>
+								<td>SJ</td>
+								<td>Svalbard and Jan Mayen</td>
+								<td align="right">78.22</td>
+								<td align="right">15.64</td>
+								<td align="right">12.2</td>
+								<td align="right">56</td>
+								<td align="right">0</td>
+								<td align="right">16.11</td>
+								<td>4/2/2018 10:50</td>
+								</tr>
+								<tr>
+								<td>inverell</td>
+								<td>AU</td>
+								<td>Australia</td>
+								<td align="right">-29.78</td>
+								<td align="right">151.11</td>
+								<td align="right">53.25</td>
+								<td align="right">87</td>
+								<td align="right">0</td>
+								<td align="right">2.51</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>cherskiy</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">68.75</td>
+								<td align="right">161.3</td>
+								<td align="right">21.57</td>
+								<td align="right">71</td>
+								<td align="right">0</td>
+								<td align="right">7.43</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>faanui</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-16.48</td>
+								<td align="right">-151.75</td>
+								<td align="right">82.77</td>
+								<td align="right">98</td>
+								<td align="right">76</td>
+								<td align="right">13.35</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>kabinda</td>
+								<td>CD</td>
+								<td>Congo, The Democratic Republic of the</td>
+								<td align="right">-6.14</td>
+								<td align="right">24.49</td>
+								<td align="right">68.91</td>
+								<td align="right">98</td>
+								<td align="right">80</td>
+								<td align="right">1.72</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>rikitea</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-23.12</td>
+								<td align="right">-134.97</td>
+								<td align="right">78.45</td>
+								<td align="right">100</td>
+								<td align="right">92</td>
+								<td align="right">6.42</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>yulara</td>
+								<td>AU</td>
+								<td>Australia</td>
+								<td align="right">-25.24</td>
+								<td align="right">130.99</td>
+								<td align="right">73.4</td>
+								<td align="right">43</td>
+								<td align="right">20</td>
+								<td align="right">8.05</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>tasiilaq</td>
+								<td>GL</td>
+								<td>Greenland</td>
+								<td align="right">65.61</td>
+								<td align="right">-37.64</td>
+								<td align="right">26.6</td>
+								<td align="right">73</td>
+								<td align="right">0</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 10:50</td>
+								</tr>
+								<tr>
+								<td>ouegoa</td>
+								<td>NC</td>
+								<td>New Caledonia</td>
+								<td align="right">-20.34</td>
+								<td align="right">164.44</td>
+								<td align="right">74.4</td>
+								<td align="right">100</td>
+								<td align="right">92</td>
+								<td align="right">8.99</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>mataura</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-38.98</td>
+								<td align="right">-151.84</td>
+								<td align="right">57.2</td>
+								<td align="right">67</td>
+								<td align="right">75</td>
+								<td align="right">10.29</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>sambava</td>
+								<td>MG</td>
+								<td>Madagascar</td>
+								<td align="right">-14.27</td>
+								<td align="right">50.17</td>
+								<td align="right">79.08</td>
+								<td align="right">100</td>
+								<td align="right">56</td>
+								<td align="right">11.79</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>gaoyou</td>
+								<td>CN</td>
+								<td>China</td>
+								<td align="right">32.79</td>
+								<td align="right">119.43</td>
+								<td align="right">63.15</td>
+								<td align="right">80</td>
+								<td align="right">0</td>
+								<td align="right">7.65</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>vestmannaeyjar</td>
+								<td>IS</td>
+								<td>Iceland</td>
+								<td align="right">63.44</td>
+								<td align="right">-20.27</td>
+								<td align="right">33.8</td>
+								<td align="right">100</td>
+								<td align="right">90</td>
+								<td align="right">17.22</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>grande riviere noire</td>
+								<td>MU</td>
+								<td>Mauritius</td>
+								<td align="right">-20.36</td>
+								<td align="right">57.37</td>
+								<td align="right">80.6</td>
+								<td align="right">83</td>
+								<td align="right">40</td>
+								<td align="right">3.36</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>husavik</td>
+								<td>IS</td>
+								<td>Iceland</td>
+								<td align="right">66.04</td>
+								<td align="right">-17.34</td>
+								<td align="right">30.2</td>
+								<td align="right">63</td>
+								<td align="right">0</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>hamilton</td>
+								<td>BM</td>
+								<td>Bermuda</td>
+								<td align="right">32.3</td>
+								<td align="right">-64.78</td>
+								<td align="right">69.8</td>
+								<td align="right">73</td>
+								<td align="right">75</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 10:55</td>
+								</tr>
+								<tr>
+								<td>aitape</td>
+								<td>PG</td>
+								<td>Papua New Guinea</td>
+								<td align="right">-3.15</td>
+								<td align="right">142.36</td>
+								<td align="right">78.27</td>
+								<td align="right">100</td>
+								<td align="right">76</td>
+								<td align="right">5.97</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>romny</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">50.73</td>
+								<td align="right">129.29</td>
+								<td align="right">25.08</td>
+								<td align="right">35</td>
+								<td align="right">24</td>
+								<td align="right">17.94</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>belushya guba</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">77.39</td>
+								<td align="right">55.63</td>
+								<td align="right">64.05</td>
+								<td align="right">97</td>
+								<td align="right">64</td>
+								<td align="right">1.72</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>asau</td>
+								<td>TV</td>
+								<td>Tuvalu</td>
+								<td align="right">-17.53</td>
+								<td align="right">179.85</td>
+								<td align="right">78.8</td>
+								<td align="right">27</td>
+								<td align="right">75</td>
+								<td align="right">13.87</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>bredasdorp</td>
+								<td>ZA</td>
+								<td>South Africa</td>
+								<td align="right">-34.53</td>
+								<td align="right">20.04</td>
+								<td align="right">66.2</td>
+								<td align="right">82</td>
+								<td align="right">80</td>
+								<td align="right">1.12</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>asau</td>
+								<td>TV</td>
+								<td>Tuvalu</td>
+								<td align="right">-14.29</td>
+								<td align="right">177.22</td>
+								<td align="right">67.56</td>
+								<td align="right">88</td>
+								<td align="right">0</td>
+								<td align="right">7.2</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>zhigansk</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">66.77</td>
+								<td align="right">123.37</td>
+								<td align="right">7.17</td>
+								<td align="right">78</td>
+								<td align="right">68</td>
+								<td align="right">5.19</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>khatanga</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">71.98</td>
+								<td align="right">102.47</td>
+								<td align="right">-7.68</td>
+								<td align="right">78</td>
+								<td align="right">64</td>
+								<td align="right">10.45</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>hermanus</td>
+								<td>ZA</td>
+								<td>South Africa</td>
+								<td align="right">-34.42</td>
+								<td align="right">19.24</td>
+								<td align="right">65.85</td>
+								<td align="right">89</td>
+								<td align="right">64</td>
+								<td align="right">4.63</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>taree</td>
+								<td>AU</td>
+								<td>Australia</td>
+								<td align="right">-31.91</td>
+								<td align="right">152.46</td>
+								<td align="right">71.6</td>
+								<td align="right">83</td>
+								<td align="right">20</td>
+								<td align="right">10.29</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>moiyabana</td>
+								<td>BW</td>
+								<td>Botswana</td>
+								<td align="right">-22.52</td>
+								<td align="right">26.36</td>
+								<td align="right">10.41</td>
+								<td align="right">72</td>
+								<td align="right">64</td>
+								<td align="right">5.08</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>noumea</td>
+								<td>NC</td>
+								<td>New Caledonia</td>
+								<td align="right">-22.28</td>
+								<td align="right">166.46</td>
+								<td align="right">73.4</td>
+								<td align="right">83</td>
+								<td align="right">0</td>
+								<td align="right">3.36</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>beipiao</td>
+								<td>CN</td>
+								<td>China</td>
+								<td align="right">41.8</td>
+								<td align="right">120.76</td>
+								<td align="right">36.15</td>
+								<td align="right">65</td>
+								<td align="right">100</td>
+								<td align="right">17.49</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>cabo san lucas</td>
+								<td>MX</td>
+								<td>Mexico</td>
+								<td align="right">22.89</td>
+								<td align="right">-109.91</td>
+								<td align="right">85.62</td>
+								<td align="right">30</td>
+								<td align="right">5</td>
+								<td align="right">14.99</td>
+								<td>4/2/2018 10:46</td>
+								</tr>
+								<tr>
+								<td>bilibino</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">68.06</td>
+								<td align="right">166.44</td>
+								<td align="right">10.41</td>
+								<td align="right">78</td>
+								<td align="right">8</td>
+								<td align="right">2.73</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>avarua</td>
+								<td>CK</td>
+								<td>Cook Islands</td>
+								<td align="right">-21.21</td>
+								<td align="right">-159.78</td>
+								<td align="right">77</td>
+								<td align="right">83</td>
+								<td align="right">75</td>
+								<td align="right">6.93</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>amderma</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">80.13</td>
+								<td align="right">64.59</td>
+								<td align="right">53.25</td>
+								<td align="right">87</td>
+								<td align="right">0</td>
+								<td align="right">2.51</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>manzhouli</td>
+								<td>CN</td>
+								<td>China</td>
+								<td align="right">49.6</td>
+								<td align="right">117.43</td>
+								<td align="right">18.42</td>
+								<td align="right">35</td>
+								<td align="right">0</td>
+								<td align="right">18.5</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>mataura</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-56.22</td>
+								<td align="right">-147.77</td>
+								<td align="right">82.4</td>
+								<td align="right">83</td>
+								<td align="right">20</td>
+								<td align="right">3.36</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>alofi</td>
+								<td>NU</td>
+								<td>Niue</td>
+								<td align="right">-19.06</td>
+								<td align="right">-169.92</td>
+								<td align="right">73.4</td>
+								<td align="right">100</td>
+								<td align="right">92</td>
+								<td align="right">3.36</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>la cruz</td>
+								<td>CR</td>
+								<td>Costa Rica</td>
+								<td align="right">11.07</td>
+								<td align="right">-85.63</td>
+								<td align="right">89.76</td>
+								<td align="right">62</td>
+								<td align="right">20</td>
+								<td align="right">11.41</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>bengkulu</td>
+								<td>ID</td>
+								<td>Indonesia</td>
+								<td align="right">-12.96</td>
+								<td align="right">94.05</td>
+								<td align="right">73.4</td>
+								<td align="right">43</td>
+								<td align="right">20</td>
+								<td align="right">8.05</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>port hardy</td>
+								<td>CA</td>
+								<td>Canada</td>
+								<td align="right">50.7</td>
+								<td align="right">-127.42</td>
+								<td align="right">44.6</td>
+								<td align="right">56</td>
+								<td align="right">75</td>
+								<td align="right">8.05</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>airai</td>
+								<td>PW</td>
+								<td>Palau</td>
+								<td align="right">6.41</td>
+								<td align="right">138.92</td>
+								<td align="right">74.4</td>
+								<td align="right">100</td>
+								<td align="right">92</td>
+								<td align="right">8.99</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>qaanaaq</td>
+								<td>GL</td>
+								<td>Greenland</td>
+								<td align="right">77.48</td>
+								<td align="right">-69.36</td>
+								<td align="right">2.85</td>
+								<td align="right">84</td>
+								<td align="right">0</td>
+								<td align="right">6.53</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>yar-sale</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">66.83</td>
+								<td align="right">70.83</td>
+								<td align="right">1.05</td>
+								<td align="right">73</td>
+								<td align="right">56</td>
+								<td align="right">15.26</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>tamandare</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-8.28</td>
+								<td align="right">-70.75</td>
+								<td align="right">91.4</td>
+								<td align="right">66</td>
+								<td align="right">40</td>
+								<td align="right">3.36</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>rio grande</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-32.03</td>
+								<td align="right">-52.1</td>
+								<td align="right">77</td>
+								<td align="right">73</td>
+								<td align="right">20</td>
+								<td align="right">5.82</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>kazalinsk</td>
+								<td>KZ</td>
+								<td>Kazakhstan</td>
+								<td align="right">47.78</td>
+								<td align="right">62.98</td>
+								<td align="right">30.2</td>
+								<td align="right">63</td>
+								<td align="right">0</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>mataura</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-41.16</td>
+								<td align="right">-149.32</td>
+								<td align="right">78.45</td>
+								<td align="right">100</td>
+								<td align="right">92</td>
+								<td align="right">6.42</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>bubaque</td>
+								<td>GW</td>
+								<td>Guinea-Bissau</td>
+								<td align="right">11.28</td>
+								<td align="right">-15.83</td>
+								<td align="right">91.4</td>
+								<td align="right">43</td>
+								<td align="right">0</td>
+								<td align="right">10.29</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>airai</td>
+								<td>PW</td>
+								<td>Palau</td>
+								<td align="right">13.45</td>
+								<td align="right">136.58</td>
+								<td align="right">70.44</td>
+								<td align="right">95</td>
+								<td align="right">20</td>
+								<td align="right">8.66</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>muravlenko</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">63.79</td>
+								<td align="right">74.5</td>
+								<td align="right">-4.53</td>
+								<td align="right">81</td>
+								<td align="right">8</td>
+								<td align="right">7.99</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>saskylakh</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">71.97</td>
+								<td align="right">114.09</td>
+								<td align="right">-7.95</td>
+								<td align="right">63</td>
+								<td align="right">44</td>
+								<td align="right">9.44</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>yellowknife</td>
+								<td>CA</td>
+								<td>Canada</td>
+								<td align="right">62.45</td>
+								<td align="right">-114.38</td>
+								<td align="right">-2.21</td>
+								<td align="right">53</td>
+								<td align="right">20</td>
+								<td align="right">8.05</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>sioux lookout</td>
+								<td>CA</td>
+								<td>Canada</td>
+								<td align="right">50.1</td>
+								<td align="right">-91.92</td>
+								<td align="right">7.86</td>
+								<td align="right">29</td>
+								<td align="right">20</td>
+								<td align="right">8.05</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>airai</td>
+								<td>PW</td>
+								<td>Palau</td>
+								<td align="right">18.15</td>
+								<td align="right">141.9</td>
+								<td align="right">70.44</td>
+								<td align="right">95</td>
+								<td align="right">20</td>
+								<td align="right">8.66</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>provideniya</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">64.42</td>
+								<td align="right">-173.23</td>
+								<td align="right">26.34</td>
+								<td align="right">100</td>
+								<td align="right">56</td>
+								<td align="right">3.96</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>goure</td>
+								<td>NE</td>
+								<td>Niger</td>
+								<td align="right">13.98</td>
+								<td align="right">10.27</td>
+								<td align="right">86.55</td>
+								<td align="right">19</td>
+								<td align="right">0</td>
+								<td align="right">4.74</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>novouzensk</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">50.46</td>
+								<td align="right">48.14</td>
+								<td align="right">36.6</td>
+								<td align="right">85</td>
+								<td align="right">0</td>
+								<td align="right">15.26</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>illoqqortoormiut</td>
+								<td>GL</td>
+								<td>Greenland</td>
+								<td align="right">75.55</td>
+								<td align="right">-30.9</td>
+								<td align="right">67.56</td>
+								<td align="right">88</td>
+								<td align="right">0</td>
+								<td align="right">7.2</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>kaitangata</td>
+								<td>NZ</td>
+								<td>New Zealand</td>
+								<td align="right">-46.28</td>
+								<td align="right">169.85</td>
+								<td align="right">52.35</td>
+								<td align="right">100</td>
+								<td align="right">88</td>
+								<td align="right">21.52</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>houma</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">29.6</td>
+								<td align="right">-90.72</td>
+								<td align="right">80.17</td>
+								<td align="right">57</td>
+								<td align="right">75</td>
+								<td align="right">8.05</td>
+								<td>4/2/2018 11:35</td>
+								</tr>
+								<tr>
+								<td>mataura</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-59.13</td>
+								<td align="right">-151.23</td>
+								<td align="right">70.57</td>
+								<td align="right">94</td>
+								<td align="right">90</td>
+								<td align="right">12.75</td>
+								<td>4/2/2018 11:36</td>
+								</tr>
+								<tr>
+								<td>nuevo progreso</td>
+								<td>MX</td>
+								<td>Mexico</td>
+								<td align="right">17.14</td>
+								<td align="right">-95.05</td>
+								<td align="right">82.41</td>
+								<td align="right">90</td>
+								<td align="right">8</td>
+								<td align="right">2.06</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>palabuhanratu</td>
+								<td>ID</td>
+								<td>Indonesia</td>
+								<td align="right">-15.04</td>
+								<td align="right">102.22</td>
+								<td align="right">70.44</td>
+								<td align="right">95</td>
+								<td align="right">20</td>
+								<td align="right">8.66</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>scottsburgh</td>
+								<td>ZA</td>
+								<td>South Africa</td>
+								<td align="right">-33.09</td>
+								<td align="right">35.09</td>
+								<td align="right">10.41</td>
+								<td align="right">72</td>
+								<td align="right">64</td>
+								<td align="right">5.08</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>port alfred</td>
+								<td>ZA</td>
+								<td>South Africa</td>
+								<td align="right">-33.59</td>
+								<td align="right">26.89</td>
+								<td align="right">76.2</td>
+								<td align="right">80</td>
+								<td align="right">92</td>
+								<td align="right">6.2</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>kousseri</td>
+								<td>CM</td>
+								<td>Cameroon</td>
+								<td align="right">12.08</td>
+								<td align="right">15.03</td>
+								<td align="right">96.8</td>
+								<td align="right">11</td>
+								<td align="right">0</td>
+								<td align="right">8.05</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>ponta do sol</td>
+								<td>CV</td>
+								<td>Cabo Verde</td>
+								<td align="right">17.2</td>
+								<td align="right">-25.09</td>
+								<td align="right">68.91</td>
+								<td align="right">100</td>
+								<td align="right">0</td>
+								<td align="right">14.36</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>saint-philippe</td>
+								<td>RE</td>
+								<td>RA©union</td>
+								<td align="right">-21.36</td>
+								<td align="right">55.77</td>
+								<td align="right">77.97</td>
+								<td align="right">78</td>
+								<td align="right">0</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>ancud</td>
+								<td>CL</td>
+								<td>Chile</td>
+								<td align="right">-41.87</td>
+								<td align="right">-73.83</td>
+								<td align="right">84.2</td>
+								<td align="right">66</td>
+								<td align="right">75</td>
+								<td align="right">3.96</td>
+								<td>4/2/2018 12:00</td>
+								</tr>
+								<tr>
+								<td>roald</td>
+								<td>NO</td>
+								<td>Norway</td>
+								<td align="right">62.58</td>
+								<td align="right">6.12</td>
+								<td align="right">32.67</td>
+								<td align="right">92</td>
+								<td align="right">75</td>
+								<td align="right">1.12</td>
+								<td>4/2/2018 11:20</td>
+								</tr>
+								<tr>
+								<td>buchanan</td>
+								<td>LR</td>
+								<td>Liberia</td>
+								<td align="right">5.88</td>
+								<td align="right">-10.05</td>
+								<td align="right">84.2</td>
+								<td align="right">79</td>
+								<td align="right">75</td>
+								<td align="right">11.41</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>barentsburg</td>
+								<td>SJ</td>
+								<td>Svalbard and Jan Mayen</td>
+								<td align="right">75.7</td>
+								<td align="right">11.24</td>
+								<td align="right">75.39</td>
+								<td align="right">100</td>
+								<td align="right">20</td>
+								<td align="right">14.7</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>thompson</td>
+								<td>CA</td>
+								<td>Canada</td>
+								<td align="right">55.74</td>
+								<td align="right">-97.86</td>
+								<td align="right">3.2</td>
+								<td align="right">38</td>
+								<td align="right">20</td>
+								<td align="right">6.93</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>broken hill</td>
+								<td>AU</td>
+								<td>Australia</td>
+								<td align="right">-31.97</td>
+								<td align="right">141.45</td>
+								<td align="right">54.69</td>
+								<td align="right">70</td>
+								<td align="right">0</td>
+								<td align="right">10.45</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>baykit</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">61.68</td>
+								<td align="right">96.39</td>
+								<td align="right">9.15</td>
+								<td align="right">67</td>
+								<td align="right">36</td>
+								<td align="right">7.54</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>hasaki</td>
+								<td>JP</td>
+								<td>Japan</td>
+								<td align="right">35.73</td>
+								<td align="right">140.83</td>
+								<td align="right">54.45</td>
+								<td align="right">87</td>
+								<td align="right">75</td>
+								<td align="right">6.93</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>asau</td>
+								<td>TV</td>
+								<td>Tuvalu</td>
+								<td align="right">-6.93</td>
+								<td align="right">179.26</td>
+								<td align="right">74.4</td>
+								<td align="right">100</td>
+								<td align="right">92</td>
+								<td align="right">8.99</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>bath</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">40.73</td>
+								<td align="right">-75.39</td>
+								<td align="right">38.3</td>
+								<td align="right">81</td>
+								<td align="right">90</td>
+								<td align="right">1.95</td>
+								<td>4/2/2018 11:15</td>
+								</tr>
+								<tr>
+								<td>hualmay</td>
+								<td>PE</td>
+								<td>Peru</td>
+								<td align="right">-11.1</td>
+								<td align="right">-77.61</td>
+								<td align="right">75.48</td>
+								<td align="right">73</td>
+								<td align="right">0</td>
+								<td align="right">4.97</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>kavaratti</td>
+								<td>IN</td>
+								<td>India</td>
+								<td align="right">10.57</td>
+								<td align="right">72.64</td>
+								<td align="right">84.12</td>
+								<td align="right">100</td>
+								<td align="right">0</td>
+								<td align="right">6.98</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>severo-kurilsk</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">50.68</td>
+								<td align="right">156.12</td>
+								<td align="right">26.52</td>
+								<td align="right">100</td>
+								<td align="right">88</td>
+								<td align="right">9.78</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>dikson</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">73.51</td>
+								<td align="right">80.55</td>
+								<td align="right">-6.78</td>
+								<td align="right">75</td>
+								<td align="right">20</td>
+								<td align="right">5.53</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>huarmey</td>
+								<td>PE</td>
+								<td>Peru</td>
+								<td align="right">-10.07</td>
+								<td align="right">-78.15</td>
+								<td align="right">78.63</td>
+								<td align="right">52</td>
+								<td align="right">20</td>
+								<td align="right">3.29</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>elk city</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">35.41</td>
+								<td align="right">-99.4</td>
+								<td align="right">43.43</td>
+								<td align="right">51</td>
+								<td align="right">90</td>
+								<td align="right">20.8</td>
+								<td>4/2/2018 11:15</td>
+								</tr>
+								<tr>
+								<td>tuktoyaktuk</td>
+								<td>CA</td>
+								<td>Canada</td>
+								<td align="right">69.44</td>
+								<td align="right">-133.03</td>
+								<td align="right">-3.28</td>
+								<td align="right">77</td>
+								<td align="right">75</td>
+								<td align="right">16.11</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>barentsburg</td>
+								<td>SJ</td>
+								<td>Svalbard and Jan Mayen</td>
+								<td align="right">85.32</td>
+								<td align="right">-4.16</td>
+								<td align="right">73.4</td>
+								<td align="right">100</td>
+								<td align="right">90</td>
+								<td align="right">20.29</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>abashiri</td>
+								<td>JP</td>
+								<td>Japan</td>
+								<td align="right">44.01</td>
+								<td align="right">144.25</td>
+								<td align="right">36.24</td>
+								<td align="right">77</td>
+								<td align="right">64</td>
+								<td align="right">11.23</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>lazaro cardenas</td>
+								<td>MX</td>
+								<td>Mexico</td>
+								<td align="right">28.39</td>
+								<td align="right">-105.62</td>
+								<td align="right">77</td>
+								<td align="right">16</td>
+								<td align="right">5</td>
+								<td align="right">9.17</td>
+								<td>4/2/2018 10:42</td>
+								</tr>
+								<tr>
+								<td>mataura</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-56.41</td>
+								<td align="right">-145.37</td>
+								<td align="right">86.55</td>
+								<td align="right">19</td>
+								<td align="right">0</td>
+								<td align="right">4.74</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>sitka</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">37.17</td>
+								<td align="right">-99.65</td>
+								<td align="right">52.08</td>
+								<td align="right">56</td>
+								<td align="right">0</td>
+								<td align="right">18.95</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>kodino</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">63.72</td>
+								<td align="right">39.64</td>
+								<td align="right">33.9</td>
+								<td align="right">90</td>
+								<td align="right">92</td>
+								<td align="right">17.38</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>chagda</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">56.86</td>
+								<td align="right">130.41</td>
+								<td align="right">70.57</td>
+								<td align="right">94</td>
+								<td align="right">90</td>
+								<td align="right">12.75</td>
+								<td>4/2/2018 11:36</td>
+								</tr>
+								<tr>
+								<td>hami</td>
+								<td>CN</td>
+								<td>China</td>
+								<td align="right">42.84</td>
+								<td align="right">93.51</td>
+								<td align="right">47.4</td>
+								<td align="right">44</td>
+								<td align="right">88</td>
+								<td align="right">3.51</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>macheng</td>
+								<td>CN</td>
+								<td>China</td>
+								<td align="right">31.18</td>
+								<td align="right">115.03</td>
+								<td align="right">57.84</td>
+								<td align="right">88</td>
+								<td align="right">12</td>
+								<td align="right">2.51</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>porto novo</td>
+								<td>CV</td>
+								<td>Cabo Verde</td>
+								<td align="right">17.02</td>
+								<td align="right">-25.06</td>
+								<td align="right">75.2</td>
+								<td align="right">50</td>
+								<td align="right">75</td>
+								<td align="right">26.4</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>atuona</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-9.8</td>
+								<td align="right">-139.03</td>
+								<td align="right">80.43</td>
+								<td align="right">100</td>
+								<td align="right">76</td>
+								<td align="right">17.6</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>yuzhno-kurilsk</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">44.03</td>
+								<td align="right">145.86</td>
+								<td align="right">35.43</td>
+								<td align="right">91</td>
+								<td align="right">56</td>
+								<td align="right">23.09</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>mataura</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-26.83</td>
+								<td align="right">-151.44</td>
+								<td align="right">77.97</td>
+								<td align="right">78</td>
+								<td align="right">0</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>waingapu</td>
+								<td>ID</td>
+								<td>Indonesia</td>
+								<td align="right">-9.65</td>
+								<td align="right">120.26</td>
+								<td align="right">72.69</td>
+								<td align="right">98</td>
+								<td align="right">20</td>
+								<td align="right">3.29</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>illoqqortoormiut</td>
+								<td>GL</td>
+								<td>Greenland</td>
+								<td align="right">80.65</td>
+								<td align="right">-23.65</td>
+								<td align="right">32.67</td>
+								<td align="right">92</td>
+								<td align="right">75</td>
+								<td align="right">1.12</td>
+								<td>4/2/2018 11:20</td>
+								</tr>
+								<tr>
+								<td>hagere hiywet</td>
+								<td>ET</td>
+								<td>Ethiopia</td>
+								<td align="right">8.98</td>
+								<td align="right">37.85</td>
+								<td align="right">54.69</td>
+								<td align="right">86</td>
+								<td align="right">68</td>
+								<td align="right">2.51</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>norman wells</td>
+								<td>CA</td>
+								<td>Canada</td>
+								<td align="right">65.28</td>
+								<td align="right">-126.83</td>
+								<td align="right">8.6</td>
+								<td align="right">65</td>
+								<td align="right">75</td>
+								<td align="right">17.22</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>matay</td>
+								<td>EG</td>
+								<td>Egypt</td>
+								<td align="right">28.42</td>
+								<td align="right">30.79</td>
+								<td align="right">69.63</td>
+								<td align="right">28</td>
+								<td align="right">0</td>
+								<td align="right">9.66</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>santa vitoria do palmar</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-33.52</td>
+								<td align="right">-53.37</td>
+								<td align="right">73.59</td>
+								<td align="right">88</td>
+								<td align="right">68</td>
+								<td align="right">11.56</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>oriximina</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-1.77</td>
+								<td align="right">-55.87</td>
+								<td align="right">79.8</td>
+								<td align="right">92</td>
+								<td align="right">56</td>
+								<td align="right">3.06</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>hilo</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">19.71</td>
+								<td align="right">-155.08</td>
+								<td align="right">67.12</td>
+								<td align="right">69</td>
+								<td align="right">1</td>
+								<td align="right">6.93</td>
+								<td>4/2/2018 10:56</td>
+								</tr>
+								<tr>
+								<td>les cayes</td>
+								<td>HT</td>
+								<td>Haiti</td>
+								<td align="right">18.19</td>
+								<td align="right">-73.75</td>
+								<td align="right">79.89</td>
+								<td align="right">99</td>
+								<td align="right">0</td>
+								<td align="right">6.76</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>constantine</td>
+								<td>DZ</td>
+								<td>Algeria</td>
+								<td align="right">36.36</td>
+								<td align="right">6.61</td>
+								<td align="right">64.4</td>
+								<td align="right">42</td>
+								<td align="right">0</td>
+								<td align="right">14.99</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>vilhena</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-12.74</td>
+								<td align="right">-60.15</td>
+								<td align="right">80.52</td>
+								<td align="right">79</td>
+								<td align="right">80</td>
+								<td align="right">2.95</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>namatanai</td>
+								<td>PG</td>
+								<td>Papua New Guinea</td>
+								<td align="right">-3.66</td>
+								<td align="right">152.44</td>
+								<td align="right">79.8</td>
+								<td align="right">100</td>
+								<td align="right">76</td>
+								<td align="right">5.97</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>cloquet</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">46.72</td>
+								<td align="right">-92.46</td>
+								<td align="right">30.72</td>
+								<td align="right">71</td>
+								<td align="right">1</td>
+								<td align="right">6.93</td>
+								<td>4/2/2018 11:35</td>
+								</tr>
+								<tr>
+								<td>mar del plata</td>
+								<td>AR</td>
+								<td>Argentina</td>
+								<td align="right">-46.43</td>
+								<td align="right">-67.52</td>
+								<td align="right">77.55</td>
+								<td align="right">38</td>
+								<td align="right">24</td>
+								<td align="right">28.12</td>
+								<td>4/2/2018 11:48</td>
+								</tr>
+								<tr>
+								<td>dolinsk</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">47.32</td>
+								<td align="right">142.8</td>
+								<td align="right">41</td>
+								<td align="right">86</td>
+								<td align="right">75</td>
+								<td align="right">11.18</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>enugu</td>
+								<td>NG</td>
+								<td>Nigeria</td>
+								<td align="right">6.45</td>
+								<td align="right">7.5</td>
+								<td align="right">73.5</td>
+								<td align="right">99</td>
+								<td align="right">80</td>
+								<td align="right">3.62</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>taolanaro</td>
+								<td>MG</td>
+								<td>Madagascar</td>
+								<td align="right">-80.07</td>
+								<td align="right">59.36</td>
+								<td align="right">48.2</td>
+								<td align="right">93</td>
+								<td align="right">75</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>laguna</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-39.62</td>
+								<td align="right">-36.53</td>
+								<td align="right">77</td>
+								<td align="right">16</td>
+								<td align="right">5</td>
+								<td align="right">9.17</td>
+								<td>4/2/2018 10:42</td>
+								</tr>
+								<tr>
+								<td>fare</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-16.7</td>
+								<td align="right">-151.02</td>
+								<td align="right">82.32</td>
+								<td align="right">99</td>
+								<td align="right">48</td>
+								<td align="right">13.24</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>yumen</td>
+								<td>CN</td>
+								<td>China</td>
+								<td align="right">40.29</td>
+								<td align="right">97.04</td>
+								<td align="right">37.5</td>
+								<td align="right">31</td>
+								<td align="right">0</td>
+								<td align="right">5.19</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>bataipora</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-22.3</td>
+								<td align="right">-53.27</td>
+								<td align="right">80.7</td>
+								<td align="right">84</td>
+								<td align="right">68</td>
+								<td align="right">4.63</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>kavieng</td>
+								<td>PG</td>
+								<td>Papua New Guinea</td>
+								<td align="right">-2.57</td>
+								<td align="right">150.8</td>
+								<td align="right">83.49</td>
+								<td align="right">100</td>
+								<td align="right">76</td>
+								<td align="right">7.65</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>amapa</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-1.83</td>
+								<td align="right">-56.23</td>
+								<td align="right">79.35</td>
+								<td align="right">90</td>
+								<td align="right">88</td>
+								<td align="right">3.4</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>chkalovskoye</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">45.34</td>
+								<td align="right">132.63</td>
+								<td align="right">80.43</td>
+								<td align="right">100</td>
+								<td align="right">76</td>
+								<td align="right">17.6</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>abha</td>
+								<td>SA</td>
+								<td>Saudi Arabia</td>
+								<td align="right">18.22</td>
+								<td align="right">42.5</td>
+								<td align="right">53.6</td>
+								<td align="right">93</td>
+								<td align="right">75</td>
+								<td align="right">19.46</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>hithadhoo</td>
+								<td>MV</td>
+								<td>Maldives</td>
+								<td align="right">-0.6</td>
+								<td align="right">73.08</td>
+								<td align="right">85.11</td>
+								<td align="right">100</td>
+								<td align="right">76</td>
+								<td align="right">9.1</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>tautira</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-17.73</td>
+								<td align="right">-149.15</td>
+								<td align="right">84.2</td>
+								<td align="right">66</td>
+								<td align="right">20</td>
+								<td align="right">2.24</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>codrington</td>
+								<td>AG</td>
+								<td>Antigua and Barbuda</td>
+								<td align="right">23.07</td>
+								<td align="right">-53.36</td>
+								<td align="right">32.67</td>
+								<td align="right">92</td>
+								<td align="right">75</td>
+								<td align="right">1.12</td>
+								<td>4/2/2018 11:20</td>
+								</tr>
+								<tr>
+								<td>esperance</td>
+								<td>AU</td>
+								<td>Australia</td>
+								<td align="right">-33.86</td>
+								<td align="right">121.89</td>
+								<td align="right">61.08</td>
+								<td align="right">79</td>
+								<td align="right">8</td>
+								<td align="right">10</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>luangwa</td>
+								<td>ZM</td>
+								<td>Zambia</td>
+								<td align="right">-12.88</td>
+								<td align="right">28.25</td>
+								<td align="right">68.91</td>
+								<td align="right">78</td>
+								<td align="right">20</td>
+								<td align="right">5.41</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>terney</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">45.05</td>
+								<td align="right">136.61</td>
+								<td align="right">40.38</td>
+								<td align="right">87</td>
+								<td align="right">92</td>
+								<td align="right">10</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>swift current</td>
+								<td>CA</td>
+								<td>Canada</td>
+								<td align="right">50.29</td>
+								<td align="right">-107.8</td>
+								<td align="right">15.8</td>
+								<td align="right">61</td>
+								<td align="right">1</td>
+								<td align="right">8.05</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>lavrentiya</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">65.58</td>
+								<td align="right">-170.99</td>
+								<td align="right">23.1</td>
+								<td align="right">95</td>
+								<td align="right">68</td>
+								<td align="right">4.85</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>goundi</td>
+								<td>TD</td>
+								<td>Chad</td>
+								<td align="right">9.36</td>
+								<td align="right">17.37</td>
+								<td align="right">88.17</td>
+								<td align="right">21</td>
+								<td align="right">0</td>
+								<td align="right">6.76</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>poronaysk</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">49.22</td>
+								<td align="right">143.1</td>
+								<td align="right">39.39</td>
+								<td align="right">91</td>
+								<td align="right">76</td>
+								<td align="right">13.69</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>taolanaro</td>
+								<td>MG</td>
+								<td>Madagascar</td>
+								<td align="right">-83.99</td>
+								<td align="right">68.65</td>
+								<td align="right">79.89</td>
+								<td align="right">99</td>
+								<td align="right">0</td>
+								<td align="right">6.76</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>rurrenabaque</td>
+								<td>BO</td>
+								<td>Bolivia, Plurinational State of</td>
+								<td align="right">-14.44</td>
+								<td align="right">-67.53</td>
+								<td align="right">79.56</td>
+								<td align="right">83</td>
+								<td align="right">75</td>
+								<td align="right">2.84</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>cagayan de tawi-tawi</td>
+								<td>PH</td>
+								<td>Philippines</td>
+								<td align="right">7.36</td>
+								<td align="right">118.33</td>
+								<td align="right">64.4</td>
+								<td align="right">42</td>
+								<td align="right">0</td>
+								<td align="right">14.99</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>vila franca do campo</td>
+								<td>PT</td>
+								<td>Portugal</td>
+								<td align="right">37.72</td>
+								<td align="right">-25.43</td>
+								<td align="right">60.8</td>
+								<td align="right">63</td>
+								<td align="right">20</td>
+								<td align="right">24.16</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>geraldton</td>
+								<td>AU</td>
+								<td>Australia</td>
+								<td align="right">-28.77</td>
+								<td align="right">114.6</td>
+								<td align="right">68</td>
+								<td align="right">88</td>
+								<td align="right">0</td>
+								<td align="right">13.47</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>jingdezhen</td>
+								<td>CN</td>
+								<td>China</td>
+								<td align="right">29.29</td>
+								<td align="right">117.2</td>
+								<td align="right">63.33</td>
+								<td align="right">97</td>
+								<td align="right">36</td>
+								<td align="right">3.29</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>lebu</td>
+								<td>CL</td>
+								<td>Chile</td>
+								<td align="right">-37.62</td>
+								<td align="right">-73.65</td>
+								<td align="right">59.73</td>
+								<td align="right">91</td>
+								<td align="right">0</td>
+								<td align="right">9.66</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>westport</td>
+								<td>IE</td>
+								<td>Ireland</td>
+								<td align="right">53.8</td>
+								<td align="right">-9.52</td>
+								<td align="right">37.4</td>
+								<td align="right">93</td>
+								<td align="right">90</td>
+								<td align="right">14.99</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>castro</td>
+								<td>CL</td>
+								<td>Chile</td>
+								<td align="right">-42.48</td>
+								<td align="right">-73.76</td>
+								<td align="right">84.2</td>
+								<td align="right">66</td>
+								<td align="right">75</td>
+								<td align="right">4.18</td>
+								<td>4/2/2018 12:00</td>
+								</tr>
+								<tr>
+								<td>lensk</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">60.71</td>
+								<td align="right">114.91</td>
+								<td align="right">5.64</td>
+								<td align="right">57</td>
+								<td align="right">0</td>
+								<td align="right">5.41</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>iwanai</td>
+								<td>JP</td>
+								<td>Japan</td>
+								<td align="right">42.97</td>
+								<td align="right">140.51</td>
+								<td align="right">46.95</td>
+								<td align="right">85</td>
+								<td align="right">76</td>
+								<td align="right">18.28</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>manta</td>
+								<td>EC</td>
+								<td>Ecuador</td>
+								<td align="right">-0.95</td>
+								<td align="right">-80.73</td>
+								<td align="right">80.6</td>
+								<td align="right">78</td>
+								<td align="right">75</td>
+								<td align="right">6.93</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>fortuna</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">40.6</td>
+								<td align="right">-124.16</td>
+								<td align="right">52.93</td>
+								<td align="right">71</td>
+								<td align="right">20</td>
+								<td align="right">11.41</td>
+								<td>4/2/2018 11:35</td>
+								</tr>
+								<tr>
+								<td>saleaula</td>
+								<td>WS</td>
+								<td>Samoa</td>
+								<td align="right">-2.93</td>
+								<td align="right">-170.92</td>
+								<td align="right">-6.78</td>
+								<td align="right">75</td>
+								<td align="right">20</td>
+								<td align="right">5.53</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>andapa</td>
+								<td>MG</td>
+								<td>Madagascar</td>
+								<td align="right">-14.66</td>
+								<td align="right">49.65</td>
+								<td align="right">72.87</td>
+								<td align="right">95</td>
+								<td align="right">100</td>
+								<td align="right">1.95</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>lagoa</td>
+								<td>PT</td>
+								<td>Portugal</td>
+								<td align="right">37.14</td>
+								<td align="right">-8.45</td>
+								<td align="right">59</td>
+								<td align="right">93</td>
+								<td align="right">20</td>
+								<td align="right">12.75</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>kahului</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">20.89</td>
+								<td align="right">-156.47</td>
+								<td align="right">75.65</td>
+								<td align="right">74</td>
+								<td align="right">20</td>
+								<td align="right">19.46</td>
+								<td>4/2/2018 10:56</td>
+								</tr>
+								<tr>
+								<td>jimo</td>
+								<td>CN</td>
+								<td>China</td>
+								<td align="right">36.39</td>
+								<td align="right">120.46</td>
+								<td align="right">62.6</td>
+								<td align="right">82</td>
+								<td align="right">88</td>
+								<td align="right">6.71</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>ilebo</td>
+								<td>CD</td>
+								<td>Congo, The Democratic Republic of the</td>
+								<td align="right">-4.33</td>
+								<td align="right">20.59</td>
+								<td align="right">74.4</td>
+								<td align="right">96</td>
+								<td align="right">36</td>
+								<td align="right">2.17</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>taolanaro</td>
+								<td>MG</td>
+								<td>Madagascar</td>
+								<td align="right">-79.23</td>
+								<td align="right">68.64</td>
+								<td align="right">59.55</td>
+								<td align="right">94</td>
+								<td align="right">20</td>
+								<td align="right">7.54</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>taolanaro</td>
+								<td>MG</td>
+								<td>Madagascar</td>
+								<td align="right">-61.69</td>
+								<td align="right">63.14</td>
+								<td align="right">53.6</td>
+								<td align="right">93</td>
+								<td align="right">75</td>
+								<td align="right">19.46</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>tiarei</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-17.53</td>
+								<td align="right">-149.33</td>
+								<td align="right">84.2</td>
+								<td align="right">66</td>
+								<td align="right">20</td>
+								<td align="right">2.24</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>kamaishi</td>
+								<td>JP</td>
+								<td>Japan</td>
+								<td align="right">39.28</td>
+								<td align="right">141.86</td>
+								<td align="right">39.75</td>
+								<td align="right">97</td>
+								<td align="right">8</td>
+								<td align="right">3.29</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>banjar</td>
+								<td>ID</td>
+								<td>Indonesia</td>
+								<td align="right">-7.37</td>
+								<td align="right">108.54</td>
+								<td align="right">71.07</td>
+								<td align="right">97</td>
+								<td align="right">76</td>
+								<td align="right">1.16</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>aykhal</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">65.95</td>
+								<td align="right">111.51</td>
+								<td align="right">-6.33</td>
+								<td align="right">55</td>
+								<td align="right">20</td>
+								<td align="right">5.19</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>vao</td>
+								<td>NC</td>
+								<td>New Caledonia</td>
+								<td align="right">-22.67</td>
+								<td align="right">167.48</td>
+								<td align="right">77.82</td>
+								<td align="right">100</td>
+								<td align="right">80</td>
+								<td align="right">20.62</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>kiunga</td>
+								<td>PG</td>
+								<td>Papua New Guinea</td>
+								<td align="right">-6.12</td>
+								<td align="right">141.3</td>
+								<td align="right">73.95</td>
+								<td align="right">92</td>
+								<td align="right">68</td>
+								<td align="right">2.17</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>mabaruma</td>
+								<td>GY</td>
+								<td>Guyana</td>
+								<td align="right">8.2</td>
+								<td align="right">-59.78</td>
+								<td align="right">83.31</td>
+								<td align="right">82</td>
+								<td align="right">80</td>
+								<td align="right">8.43</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>klaksvik</td>
+								<td>FO</td>
+								<td>Faroe Islands</td>
+								<td align="right">62.23</td>
+								<td align="right">-6.59</td>
+								<td align="right">30.2</td>
+								<td align="right">80</td>
+								<td align="right">80</td>
+								<td align="right">18.34</td>
+								<td>4/2/2018 11:20</td>
+								</tr>
+								<tr>
+								<td>chokurdakh</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">70.62</td>
+								<td align="right">147.9</td>
+								<td align="right">-5.88</td>
+								<td align="right">43</td>
+								<td align="right">12</td>
+								<td align="right">3.74</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>langfang</td>
+								<td>CN</td>
+								<td>China</td>
+								<td align="right">39.51</td>
+								<td align="right">116.7</td>
+								<td align="right">64.4</td>
+								<td align="right">20</td>
+								<td align="right">0</td>
+								<td align="right">13.42</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>pinawa</td>
+								<td>CA</td>
+								<td>Canada</td>
+								<td align="right">50.15</td>
+								<td align="right">-95.88</td>
+								<td align="right">9.15</td>
+								<td align="right">90</td>
+								<td align="right">0</td>
+								<td align="right">6.53</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>puerto princesa</td>
+								<td>PH</td>
+								<td>Philippines</td>
+								<td align="right">9.74</td>
+								<td align="right">118.73</td>
+								<td align="right">77</td>
+								<td align="right">88</td>
+								<td align="right">20</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>kurdzhinovo</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">43.99</td>
+								<td align="right">40.96</td>
+								<td align="right">34.17</td>
+								<td align="right">86</td>
+								<td align="right">88</td>
+								<td align="right">1.83</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>codrington</td>
+								<td>AG</td>
+								<td>Antigua and Barbuda</td>
+								<td align="right">24.81</td>
+								<td align="right">-45.75</td>
+								<td align="right">37.4</td>
+								<td align="right">93</td>
+								<td align="right">90</td>
+								<td align="right">14.99</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>shintomi</td>
+								<td>JP</td>
+								<td>Japan</td>
+								<td align="right">32.08</td>
+								<td align="right">131.47</td>
+								<td align="right">56.13</td>
+								<td align="right">100</td>
+								<td align="right">0</td>
+								<td align="right">5.53</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>qaqortoq</td>
+								<td>GL</td>
+								<td>Greenland</td>
+								<td align="right">60.72</td>
+								<td align="right">-46.03</td>
+								<td align="right">36.06</td>
+								<td align="right">84</td>
+								<td align="right">20</td>
+								<td align="right">20.07</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>tuatapere</td>
+								<td>NZ</td>
+								<td>New Zealand</td>
+								<td align="right">-46.13</td>
+								<td align="right">167.69</td>
+								<td align="right">52.53</td>
+								<td align="right">100</td>
+								<td align="right">36</td>
+								<td align="right">20.62</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>cidreira</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-30.17</td>
+								<td align="right">-50.22</td>
+								<td align="right">70.17</td>
+								<td align="right">100</td>
+								<td align="right">88</td>
+								<td align="right">9.66</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>babol</td>
+								<td>IR</td>
+								<td>Iran, Islamic Republic of</td>
+								<td align="right">36.55</td>
+								<td align="right">52.68</td>
+								<td align="right">50</td>
+								<td align="right">93</td>
+								<td align="right">0</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>codrington</td>
+								<td>AG</td>
+								<td>Antigua and Barbuda</td>
+								<td align="right">22.02</td>
+								<td align="right">-51.67</td>
+								<td align="right">77.55</td>
+								<td align="right">38</td>
+								<td align="right">24</td>
+								<td align="right">28.12</td>
+								<td>4/2/2018 11:48</td>
+								</tr>
+								<tr>
+								<td>nazilli</td>
+								<td>TR</td>
+								<td>Turkey</td>
+								<td align="right">37.91</td>
+								<td align="right">28.32</td>
+								<td align="right">51.9</td>
+								<td align="right">53</td>
+								<td align="right">12</td>
+								<td align="right">1.95</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>grand gaube</td>
+								<td>MU</td>
+								<td>Mauritius</td>
+								<td align="right">-20.01</td>
+								<td align="right">57.66</td>
+								<td align="right">80.6</td>
+								<td align="right">83</td>
+								<td align="right">40</td>
+								<td align="right">3.36</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>abnub</td>
+								<td>EG</td>
+								<td>Egypt</td>
+								<td align="right">27.27</td>
+								<td align="right">31.15</td>
+								<td align="right">69.81</td>
+								<td align="right">44</td>
+								<td align="right">64</td>
+								<td align="right">6.64</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>saint george</td>
+								<td>BM</td>
+								<td>Bermuda</td>
+								<td align="right">32.38</td>
+								<td align="right">-64.68</td>
+								<td align="right">69.8</td>
+								<td align="right">73</td>
+								<td align="right">75</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 10:55</td>
+								</tr>
+								<tr>
+								<td>peniche</td>
+								<td>PT</td>
+								<td>Portugal</td>
+								<td align="right">39.36</td>
+								<td align="right">-9.38</td>
+								<td align="right">59</td>
+								<td align="right">87</td>
+								<td align="right">75</td>
+								<td align="right">13.87</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>port elizabeth</td>
+								<td>ZA</td>
+								<td>South Africa</td>
+								<td align="right">-33.92</td>
+								<td align="right">25.57</td>
+								<td align="right">69.8</td>
+								<td align="right">88</td>
+								<td align="right">40</td>
+								<td align="right">28.86</td>
+								<td>4/2/2018 11:18</td>
+								</tr>
+								<tr>
+								<td>sao filipe</td>
+								<td>CV</td>
+								<td>Cabo Verde</td>
+								<td align="right">14.9</td>
+								<td align="right">-24.5</td>
+								<td align="right">71.25</td>
+								<td align="right">93</td>
+								<td align="right">0</td>
+								<td align="right">16.82</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>kargopol</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">61.51</td>
+								<td align="right">38.95</td>
+								<td align="right">44.25</td>
+								<td align="right">100</td>
+								<td align="right">92</td>
+								<td align="right">26.78</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>port hueneme</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">34.15</td>
+								<td align="right">-119.2</td>
+								<td align="right">58.59</td>
+								<td align="right">77</td>
+								<td align="right">90</td>
+								<td align="right">6.93</td>
+								<td>4/2/2018 10:58</td>
+								</tr>
+								<tr>
+								<td>eugene</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">44.05</td>
+								<td align="right">-123.1</td>
+								<td align="right">45.46</td>
+								<td align="right">61</td>
+								<td align="right">75</td>
+								<td align="right">2.95</td>
+								<td>4/2/2018 11:29</td>
+								</tr>
+								<tr>
+								<td>grootfontein</td>
+								<td>NA</td>
+								<td>Namibia</td>
+								<td align="right">-19.56</td>
+								<td align="right">18.1</td>
+								<td align="right">67.2</td>
+								<td align="right">59</td>
+								<td align="right">24</td>
+								<td align="right">4.18</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>airai</td>
+								<td>PW</td>
+								<td>Palau</td>
+								<td align="right">11.33</td>
+								<td align="right">143.49</td>
+								<td align="right">52.65</td>
+								<td align="right">81</td>
+								<td align="right">90</td>
+								<td align="right">11.41</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>illoqqortoormiut</td>
+								<td>GL</td>
+								<td>Greenland</td>
+								<td align="right">80.72</td>
+								<td align="right">-9.35</td>
+								<td align="right">83.31</td>
+								<td align="right">82</td>
+								<td align="right">80</td>
+								<td align="right">8.43</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>fukue</td>
+								<td>JP</td>
+								<td>Japan</td>
+								<td align="right">35.03</td>
+								<td align="right">136.69</td>
+								<td align="right">59</td>
+								<td align="right">82</td>
+								<td align="right">0</td>
+								<td align="right">3.36</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>haines junction</td>
+								<td>CA</td>
+								<td>Canada</td>
+								<td align="right">60.75</td>
+								<td align="right">-137.51</td>
+								<td align="right">13.74</td>
+								<td align="right">67</td>
+								<td align="right">68</td>
+								<td align="right">7.43</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>taolanaro</td>
+								<td>MG</td>
+								<td>Madagascar</td>
+								<td align="right">-51.86</td>
+								<td align="right">63.29</td>
+								<td align="right">52.35</td>
+								<td align="right">100</td>
+								<td align="right">88</td>
+								<td align="right">21.52</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>ishigaki</td>
+								<td>JP</td>
+								<td>Japan</td>
+								<td align="right">24.34</td>
+								<td align="right">124.16</td>
+								<td align="right">72.69</td>
+								<td align="right">100</td>
+								<td align="right">20</td>
+								<td align="right">11.12</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>berlevag</td>
+								<td>NO</td>
+								<td>Norway</td>
+								<td align="right">70.86</td>
+								<td align="right">29.09</td>
+								<td align="right">26.6</td>
+								<td align="right">73</td>
+								<td align="right">75</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 10:50</td>
+								</tr>
+								<tr>
+								<td>taolanaro</td>
+								<td>MG</td>
+								<td>Madagascar</td>
+								<td align="right">-53.43</td>
+								<td align="right">52.11</td>
+								<td align="right">77</td>
+								<td align="right">88</td>
+								<td align="right">20</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>dunedin</td>
+								<td>NZ</td>
+								<td>New Zealand</td>
+								<td align="right">-45.87</td>
+								<td align="right">170.5</td>
+								<td align="right">60.72</td>
+								<td align="right">53</td>
+								<td align="right">36</td>
+								<td align="right">13.13</td>
+								<td>4/2/2018 11:49</td>
+								</tr>
+								<tr>
+								<td>mahebourg</td>
+								<td>MU</td>
+								<td>Mauritius</td>
+								<td align="right">-20.41</td>
+								<td align="right">57.7</td>
+								<td align="right">80.6</td>
+								<td align="right">83</td>
+								<td align="right">40</td>
+								<td align="right">3.36</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>stromness</td>
+								<td>GB</td>
+								<td>United Kingdom</td>
+								<td align="right">58.97</td>
+								<td align="right">-3.3</td>
+								<td align="right">36.59</td>
+								<td align="right">59</td>
+								<td align="right">20</td>
+								<td align="right">10.29</td>
+								<td>4/2/2018 11:20</td>
+								</tr>
+								<tr>
+								<td>umzimvubu</td>
+								<td>ZA</td>
+								<td>South Africa</td>
+								<td align="right">-41.67</td>
+								<td align="right">38.15</td>
+								<td align="right">36.06</td>
+								<td align="right">84</td>
+								<td align="right">20</td>
+								<td align="right">20.07</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>matara</td>
+								<td>LK</td>
+								<td>Sri Lanka</td>
+								<td align="right">5.95</td>
+								<td align="right">80.54</td>
+								<td align="right">79.53</td>
+								<td align="right">99</td>
+								<td align="right">36</td>
+								<td align="right">6.64</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>labutta</td>
+								<td>MM</td>
+								<td>Myanmar</td>
+								<td align="right">15.65</td>
+								<td align="right">90.29</td>
+								<td align="right">77.55</td>
+								<td align="right">38</td>
+								<td align="right">24</td>
+								<td align="right">28.12</td>
+								<td>4/2/2018 11:48</td>
+								</tr>
+								<tr>
+								<td>bengkulu</td>
+								<td>ID</td>
+								<td>Indonesia</td>
+								<td align="right">-19.22</td>
+								<td align="right">87.94</td>
+								<td align="right">37.11</td>
+								<td align="right">98</td>
+								<td align="right">75</td>
+								<td align="right">16.11</td>
+								<td>4/2/2018 11:35</td>
+								</tr>
+								<tr>
+								<td>mataura</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-81.42</td>
+								<td align="right">-160.43</td>
+								<td align="right">59</td>
+								<td align="right">87</td>
+								<td align="right">75</td>
+								<td align="right">13.87</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>mataura</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-34.85</td>
+								<td align="right">-153.47</td>
+								<td align="right">78.45</td>
+								<td align="right">100</td>
+								<td align="right">92</td>
+								<td align="right">6.42</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>akhisar</td>
+								<td>TR</td>
+								<td>Turkey</td>
+								<td align="right">38.92</td>
+								<td align="right">27.84</td>
+								<td align="right">49.02</td>
+								<td align="right">68</td>
+								<td align="right">0</td>
+								<td align="right">3.29</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>katsuura</td>
+								<td>JP</td>
+								<td>Japan</td>
+								<td align="right">33.93</td>
+								<td align="right">134.5</td>
+								<td align="right">51.09</td>
+								<td align="right">86</td>
+								<td align="right">0</td>
+								<td align="right">1.95</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>bani</td>
+								<td>DO</td>
+								<td>Dominican Republic</td>
+								<td align="right">18.28</td>
+								<td align="right">-70.33</td>
+								<td align="right">89.6</td>
+								<td align="right">52</td>
+								<td align="right">40</td>
+								<td align="right">9.17</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>algeciras</td>
+								<td>PH</td>
+								<td>Philippines</td>
+								<td align="right">11.42</td>
+								<td align="right">120.82</td>
+								<td align="right">82.05</td>
+								<td align="right">96</td>
+								<td align="right">8</td>
+								<td align="right">9.33</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>cape town</td>
+								<td>ZA</td>
+								<td>South Africa</td>
+								<td align="right">-33.93</td>
+								<td align="right">18.42</td>
+								<td align="right">66.2</td>
+								<td align="right">77</td>
+								<td align="right">20</td>
+								<td align="right">14.99</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>kytlym</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">60.4</td>
+								<td align="right">58.89</td>
+								<td align="right">48.2</td>
+								<td align="right">93</td>
+								<td align="right">75</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>kalmunai</td>
+								<td>LK</td>
+								<td>Sri Lanka</td>
+								<td align="right">7.42</td>
+								<td align="right">81.82</td>
+								<td align="right">74.4</td>
+								<td align="right">100</td>
+								<td align="right">12</td>
+								<td align="right">3.96</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>kuryk</td>
+								<td>KZ</td>
+								<td>Kazakhstan</td>
+								<td align="right">43.18</td>
+								<td align="right">51.68</td>
+								<td align="right">48.93</td>
+								<td align="right">70</td>
+								<td align="right">0</td>
+								<td align="right">19.51</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>vaitupu</td>
+								<td>WF</td>
+								<td>Wallis and Futuna</td>
+								<td align="right">-3.58</td>
+								<td align="right">-176.68</td>
+								<td align="right">45.46</td>
+								<td align="right">61</td>
+								<td align="right">75</td>
+								<td align="right">2.95</td>
+								<td>4/2/2018 11:29</td>
+								</tr>
+								<tr>
+								<td>ferrol</td>
+								<td>ES</td>
+								<td>Spain</td>
+								<td align="right">43.48</td>
+								<td align="right">-8.23</td>
+								<td align="right">54.21</td>
+								<td align="right">76</td>
+								<td align="right">20</td>
+								<td align="right">19.46</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>illoqqortoormiut</td>
+								<td>GL</td>
+								<td>Greenland</td>
+								<td align="right">76.84</td>
+								<td align="right">-23.64</td>
+								<td align="right">65.85</td>
+								<td align="right">89</td>
+								<td align="right">64</td>
+								<td align="right">4.63</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>zhanatas</td>
+								<td>KZ</td>
+								<td>Kazakhstan</td>
+								<td align="right">45.73</td>
+								<td align="right">69.64</td>
+								<td align="right">13.74</td>
+								<td align="right">67</td>
+								<td align="right">68</td>
+								<td align="right">7.43</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>sentyabrskiy</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">37.09</td>
+								<td align="right">155.51</td>
+								<td align="right">52.35</td>
+								<td align="right">100</td>
+								<td align="right">88</td>
+								<td align="right">21.52</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>asosa</td>
+								<td>ET</td>
+								<td>Ethiopia</td>
+								<td align="right">10.07</td>
+								<td align="right">34.53</td>
+								<td align="right">67.02</td>
+								<td align="right">83</td>
+								<td align="right">0</td>
+								<td align="right">3.62</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>poum</td>
+								<td>NC</td>
+								<td>New Caledonia</td>
+								<td align="right">-20.23</td>
+								<td align="right">164.02</td>
+								<td align="right">77.28</td>
+								<td align="right">100</td>
+								<td align="right">92</td>
+								<td align="right">13.24</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>ajdabiya</td>
+								<td>LY</td>
+								<td>Libya</td>
+								<td align="right">30.75</td>
+								<td align="right">20.22</td>
+								<td align="right">65.85</td>
+								<td align="right">47</td>
+								<td align="right">24</td>
+								<td align="right">9.1</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>airai</td>
+								<td>PW</td>
+								<td>Palau</td>
+								<td align="right">18.4</td>
+								<td align="right">135.79</td>
+								<td align="right">48.2</td>
+								<td align="right">93</td>
+								<td align="right">75</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>bukama</td>
+								<td>CD</td>
+								<td>Congo, The Democratic Republic of the</td>
+								<td align="right">-9.2</td>
+								<td align="right">25.85</td>
+								<td align="right">78.45</td>
+								<td align="right">65</td>
+								<td align="right">8</td>
+								<td align="right">6.42</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>mataura</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-62.55</td>
+								<td align="right">-153.87</td>
+								<td align="right">36.06</td>
+								<td align="right">84</td>
+								<td align="right">20</td>
+								<td align="right">20.07</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>palmer</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">61.6</td>
+								<td align="right">-149.11</td>
+								<td align="right">31.98</td>
+								<td align="right">60</td>
+								<td align="right">1</td>
+								<td align="right">33.33</td>
+								<td>4/2/2018 10:56</td>
+								</tr>
+								<tr>
+								<td>mataura</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-53.17</td>
+								<td align="right">-151.34</td>
+								<td align="right">37.4</td>
+								<td align="right">86</td>
+								<td align="right">90</td>
+								<td align="right">6.71</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>vanavara</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">60.35</td>
+								<td align="right">102.28</td>
+								<td align="right">15.27</td>
+								<td align="right">58</td>
+								<td align="right">56</td>
+								<td align="right">6.87</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>azuaga</td>
+								<td>ES</td>
+								<td>Spain</td>
+								<td align="right">38.26</td>
+								<td align="right">-5.68</td>
+								<td align="right">58.65</td>
+								<td align="right">76</td>
+								<td align="right">88</td>
+								<td align="right">13.02</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>santo angelo</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-28.3</td>
+								<td align="right">-54.26</td>
+								<td align="right">74.22</td>
+								<td align="right">89</td>
+								<td align="right">76</td>
+								<td align="right">7.99</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>payo</td>
+								<td>PH</td>
+								<td>Philippines</td>
+								<td align="right">14.84</td>
+								<td align="right">125.72</td>
+								<td align="right">59</td>
+								<td align="right">87</td>
+								<td align="right">75</td>
+								<td align="right">13.87</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>amderma</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">81.74</td>
+								<td align="right">60.22</td>
+								<td align="right">61.08</td>
+								<td align="right">79</td>
+								<td align="right">8</td>
+								<td align="right">10</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>visnes</td>
+								<td>NO</td>
+								<td>Norway</td>
+								<td align="right">59.36</td>
+								<td align="right">5.22</td>
+								<td align="right">36.88</td>
+								<td align="right">80</td>
+								<td align="right">40</td>
+								<td align="right">2.24</td>
+								<td>4/2/2018 11:20</td>
+								</tr>
+								<tr>
+								<td>wanlaweyn</td>
+								<td>SO</td>
+								<td>Somalia</td>
+								<td align="right">2.62</td>
+								<td align="right">44.89</td>
+								<td align="right">79.62</td>
+								<td align="right">77</td>
+								<td align="right">36</td>
+								<td align="right">8.55</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>viedma</td>
+								<td>AR</td>
+								<td>Argentina</td>
+								<td align="right">-40.81</td>
+								<td align="right">-62.99</td>
+								<td align="right">80.52</td>
+								<td align="right">47</td>
+								<td align="right">0</td>
+								<td align="right">13.8</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>hue</td>
+								<td>VN</td>
+								<td>Viet Nam</td>
+								<td align="right">16.47</td>
+								<td align="right">107.58</td>
+								<td align="right">68</td>
+								<td align="right">100</td>
+								<td align="right">12</td>
+								<td align="right">2.24</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>surin</td>
+								<td>TH</td>
+								<td>Thailand</td>
+								<td align="right">14.88</td>
+								<td align="right">103.49</td>
+								<td align="right">76.02</td>
+								<td align="right">80</td>
+								<td align="right">92</td>
+								<td align="right">4.41</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>hofn</td>
+								<td>IS</td>
+								<td>Iceland</td>
+								<td align="right">64.25</td>
+								<td align="right">-15.21</td>
+								<td align="right">30.03</td>
+								<td align="right">100</td>
+								<td align="right">80</td>
+								<td align="right">9.1</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>khasan</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">42.43</td>
+								<td align="right">130.64</td>
+								<td align="right">42.72</td>
+								<td align="right">84</td>
+								<td align="right">92</td>
+								<td align="right">8.32</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>alcantara</td>
+								<td>PH</td>
+								<td>Philippines</td>
+								<td align="right">9.97</td>
+								<td align="right">123.41</td>
+								<td align="right">76.56</td>
+								<td align="right">100</td>
+								<td align="right">64</td>
+								<td align="right">5.75</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>olinda</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-22.82</td>
+								<td align="right">-43.41</td>
+								<td align="right">86.43</td>
+								<td align="right">62</td>
+								<td align="right">40</td>
+								<td align="right">12.75</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>hirara</td>
+								<td>JP</td>
+								<td>Japan</td>
+								<td align="right">24.8</td>
+								<td align="right">125.28</td>
+								<td align="right">72.24</td>
+								<td align="right">100</td>
+								<td align="right">8</td>
+								<td align="right">10.11</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>saint-joseph</td>
+								<td>RE</td>
+								<td>RA©union</td>
+								<td align="right">-21.37</td>
+								<td align="right">55.62</td>
+								<td align="right">77.97</td>
+								<td align="right">78</td>
+								<td align="right">0</td>
+								<td align="right">3.36</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>atambua</td>
+								<td>ID</td>
+								<td>Indonesia</td>
+								<td align="right">-9.11</td>
+								<td align="right">124.89</td>
+								<td align="right">76.2</td>
+								<td align="right">100</td>
+								<td align="right">8</td>
+								<td align="right">2.28</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>vardo</td>
+								<td>NO</td>
+								<td>Norway</td>
+								<td align="right">70.37</td>
+								<td align="right">31.11</td>
+								<td align="right">30.09</td>
+								<td align="right">100</td>
+								<td align="right">75</td>
+								<td align="right">19.46</td>
+								<td>4/2/2018 10:50</td>
+								</tr>
+								<tr>
+								<td>nizhneyansk</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">72.42</td>
+								<td align="right">133.71</td>
+								<td align="right">36.06</td>
+								<td align="right">84</td>
+								<td align="right">20</td>
+								<td align="right">20.07</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>lolua</td>
+								<td>TV</td>
+								<td>Tuvalu</td>
+								<td align="right">-8.27</td>
+								<td align="right">172.19</td>
+								<td align="right">83.22</td>
+								<td align="right">98</td>
+								<td align="right">12</td>
+								<td align="right">13.24</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>tsihombe</td>
+								<td>MG</td>
+								<td>Madagascar</td>
+								<td align="right">-48.76</td>
+								<td align="right">45.94</td>
+								<td align="right">83.22</td>
+								<td align="right">98</td>
+								<td align="right">12</td>
+								<td align="right">13.24</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>wilmington island</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">32</td>
+								<td align="right">-80.97</td>
+								<td align="right">80.22</td>
+								<td align="right">45</td>
+								<td align="right">20</td>
+								<td align="right">3.36</td>
+								<td>4/2/2018 11:15</td>
+								</tr>
+								<tr>
+								<td>shache</td>
+								<td>CN</td>
+								<td>China</td>
+								<td align="right">38.42</td>
+								<td align="right">77.24</td>
+								<td align="right">59.28</td>
+								<td align="right">31</td>
+								<td align="right">0</td>
+								<td align="right">11.01</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>leningradskiy</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">69.38</td>
+								<td align="right">178.42</td>
+								<td align="right">12.93</td>
+								<td align="right">74</td>
+								<td align="right">0</td>
+								<td align="right">3.4</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>bengkulu</td>
+								<td>ID</td>
+								<td>Indonesia</td>
+								<td align="right">-6.69</td>
+								<td align="right">101.45</td>
+								<td align="right">65.85</td>
+								<td align="right">89</td>
+								<td align="right">64</td>
+								<td align="right">4.63</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>aberdeen</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">46.98</td>
+								<td align="right">-123.82</td>
+								<td align="right">47.03</td>
+								<td align="right">70</td>
+								<td align="right">90</td>
+								<td align="right">12.75</td>
+								<td>4/2/2018 10:54</td>
+								</tr>
+								<tr>
+								<td>fairbanks</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">64.84</td>
+								<td align="right">-147.72</td>
+								<td align="right">7.29</td>
+								<td align="right">60</td>
+								<td align="right">1</td>
+								<td align="right">3.74</td>
+								<td>4/2/2018 10:58</td>
+								</tr>
+								<tr>
+								<td>kununurra</td>
+								<td>AU</td>
+								<td>Australia</td>
+								<td align="right">-15.77</td>
+								<td align="right">128.74</td>
+								<td align="right">75.2</td>
+								<td align="right">88</td>
+								<td align="right">0</td>
+								<td align="right">5.19</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>macon</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">32.84</td>
+								<td align="right">-83.63</td>
+								<td align="right">78.8</td>
+								<td align="right">32</td>
+								<td align="right">1</td>
+								<td align="right">5.82</td>
+								<td>4/2/2018 11:35</td>
+								</tr>
+								<tr>
+								<td>skalistyy</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">73.75</td>
+								<td align="right">35.18</td>
+								<td align="right">80.52</td>
+								<td align="right">47</td>
+								<td align="right">0</td>
+								<td align="right">13.8</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>samusu</td>
+								<td>WS</td>
+								<td>Samoa</td>
+								<td align="right">-10.31</td>
+								<td align="right">-162.75</td>
+								<td align="right">80.6</td>
+								<td align="right">83</td>
+								<td align="right">40</td>
+								<td align="right">3.36</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>maua</td>
+								<td>KE</td>
+								<td>Kenya</td>
+								<td align="right">0.23</td>
+								<td align="right">37.94</td>
+								<td align="right">62.07</td>
+								<td align="right">91</td>
+								<td align="right">8</td>
+								<td align="right">3.06</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>haukipudas</td>
+								<td>FI</td>
+								<td>Finland</td>
+								<td align="right">65.17</td>
+								<td align="right">25.5</td>
+								<td align="right">32</td>
+								<td align="right">88</td>
+								<td align="right">88</td>
+								<td align="right">11.41</td>
+								<td>4/2/2018 11:20</td>
+								</tr>
+								<tr>
+								<td>ucluelet</td>
+								<td>CA</td>
+								<td>Canada</td>
+								<td align="right">48.94</td>
+								<td align="right">-125.55</td>
+								<td align="right">44.6</td>
+								<td align="right">45</td>
+								<td align="right">20</td>
+								<td align="right">8.05</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>russkiy aktash</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">55.04</td>
+								<td align="right">52.12</td>
+								<td align="right">35.6</td>
+								<td align="right">74</td>
+								<td align="right">0</td>
+								<td align="right">13.42</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>ornskoldsvik</td>
+								<td>SE</td>
+								<td>Sweden</td>
+								<td align="right">63.29</td>
+								<td align="right">18.72</td>
+								<td align="right">29.57</td>
+								<td align="right">49</td>
+								<td align="right">48</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 11:20</td>
+								</tr>
+								<tr>
+								<td>alice springs</td>
+								<td>AU</td>
+								<td>Australia</td>
+								<td align="right">-23.7</td>
+								<td align="right">133.88</td>
+								<td align="right">64.4</td>
+								<td align="right">45</td>
+								<td align="right">0</td>
+								<td align="right">8.05</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>shiyan</td>
+								<td>CN</td>
+								<td>China</td>
+								<td align="right">32.65</td>
+								<td align="right">110.78</td>
+								<td align="right">53.97</td>
+								<td align="right">78</td>
+								<td align="right">0</td>
+								<td align="right">2.73</td>
+								<td>4/2/2018 11:49</td>
+								</tr>
+								<tr>
+								<td>aflu</td>
+								<td>DZ</td>
+								<td>Algeria</td>
+								<td align="right">32.93</td>
+								<td align="right">1.83</td>
+								<td align="right">57.2</td>
+								<td align="right">67</td>
+								<td align="right">75</td>
+								<td align="right">10.29</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>vygonichi</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">53.1</td>
+								<td align="right">34.07</td>
+								<td align="right">34.08</td>
+								<td align="right">93</td>
+								<td align="right">64</td>
+								<td align="right">8.99</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>marti</td>
+								<td>CU</td>
+								<td>Cuba</td>
+								<td align="right">21.15</td>
+								<td align="right">-77.45</td>
+								<td align="right">84.2</td>
+								<td align="right">45</td>
+								<td align="right">40</td>
+								<td align="right">10.29</td>
+								<td>4/2/2018 10:50</td>
+								</tr>
+								<tr>
+								<td>vaitupu</td>
+								<td>WF</td>
+								<td>Wallis and Futuna</td>
+								<td align="right">-2.06</td>
+								<td align="right">-179.8</td>
+								<td align="right">8.6</td>
+								<td align="right">65</td>
+								<td align="right">75</td>
+								<td align="right">17.22</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>aksarka</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">66.56</td>
+								<td align="right">67.8</td>
+								<td align="right">-1.47</td>
+								<td align="right">70</td>
+								<td align="right">44</td>
+								<td align="right">11.45</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>yunjinghong</td>
+								<td>CN</td>
+								<td>China</td>
+								<td align="right">22.07</td>
+								<td align="right">99.57</td>
+								<td align="right">-10.38</td>
+								<td align="right">70</td>
+								<td align="right">48</td>
+								<td align="right">5.64</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>mataura</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-78.55</td>
+								<td align="right">-164.41</td>
+								<td align="right">83.22</td>
+								<td align="right">98</td>
+								<td align="right">12</td>
+								<td align="right">13.24</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>guymon</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">36.68</td>
+								<td align="right">-101.48</td>
+								<td align="right">74.03</td>
+								<td align="right">18</td>
+								<td align="right">1</td>
+								<td align="right">20.8</td>
+								<td>4/2/2018 11:35</td>
+								</tr>
+								<tr>
+								<td>wadi maliz</td>
+								<td>TN</td>
+								<td>Tunisia</td>
+								<td align="right">36.47</td>
+								<td align="right">8.55</td>
+								<td align="right">71.6</td>
+								<td align="right">53</td>
+								<td align="right">20</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>mammaste</td>
+								<td>EE</td>
+								<td>Estonia</td>
+								<td align="right">58.07</td>
+								<td align="right">27.05</td>
+								<td align="right">32</td>
+								<td align="right">95</td>
+								<td align="right">90</td>
+								<td align="right">14.99</td>
+								<td>4/2/2018 10:50</td>
+								</tr>
+								<tr>
+								<td>ballina</td>
+								<td>IE</td>
+								<td>Ireland</td>
+								<td align="right">54.11</td>
+								<td align="right">-9.15</td>
+								<td align="right">37.4</td>
+								<td align="right">93</td>
+								<td align="right">90</td>
+								<td align="right">14.99</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>ulladulla</td>
+								<td>AU</td>
+								<td>Australia</td>
+								<td align="right">-35.36</td>
+								<td align="right">150.48</td>
+								<td align="right">62.6</td>
+								<td align="right">100</td>
+								<td align="right">90</td>
+								<td align="right">5.82</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>lanzhou</td>
+								<td>CN</td>
+								<td>China</td>
+								<td align="right">36.06</td>
+								<td align="right">103.82</td>
+								<td align="right">51.8</td>
+								<td align="right">32</td>
+								<td align="right">0</td>
+								<td align="right">13.42</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>plouzane</td>
+								<td>FR</td>
+								<td>France</td>
+								<td align="right">48.38</td>
+								<td align="right">-4.62</td>
+								<td align="right">51.8</td>
+								<td align="right">93</td>
+								<td align="right">64</td>
+								<td align="right">20.8</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>harigue</td>
+								<td>PH</td>
+								<td>Philippines</td>
+								<td align="right">11.73</td>
+								<td align="right">121.3</td>
+								<td align="right">75.2</td>
+								<td align="right">88</td>
+								<td align="right">0</td>
+								<td align="right">5.19</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>wanning</td>
+								<td>CN</td>
+								<td>China</td>
+								<td align="right">18.8</td>
+								<td align="right">110.4</td>
+								<td align="right">73.23</td>
+								<td align="right">100</td>
+								<td align="right">56</td>
+								<td align="right">5.19</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>zeya</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">53.74</td>
+								<td align="right">127.27</td>
+								<td align="right">18.15</td>
+								<td align="right">45</td>
+								<td align="right">68</td>
+								<td align="right">11.9</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>ilulissat</td>
+								<td>GL</td>
+								<td>Greenland</td>
+								<td align="right">69.22</td>
+								<td align="right">-51.1</td>
+								<td align="right">24.8</td>
+								<td align="right">62</td>
+								<td align="right">40</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 10:50</td>
+								</tr>
+								<tr>
+								<td>mount gambier</td>
+								<td>AU</td>
+								<td>Australia</td>
+								<td align="right">-37.83</td>
+								<td align="right">140.78</td>
+								<td align="right">58.47</td>
+								<td align="right">89</td>
+								<td align="right">92</td>
+								<td align="right">2.84</td>
+								<td>4/2/2018 11:52</td>
+								</tr>
+								<tr>
+								<td>sorvag</td>
+								<td>FO</td>
+								<td>Faroe Islands</td>
+								<td align="right">60.18</td>
+								<td align="right">-10.99</td>
+								<td align="right">26.6</td>
+								<td align="right">73</td>
+								<td align="right">0</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 10:50</td>
+								</tr>
+								<tr>
+								<td>linfen</td>
+								<td>CN</td>
+								<td>China</td>
+								<td align="right">36.09</td>
+								<td align="right">111.52</td>
+								<td align="right">49.65</td>
+								<td align="right">71</td>
+								<td align="right">0</td>
+								<td align="right">2.06</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>saint-tite</td>
+								<td>CA</td>
+								<td>Canada</td>
+								<td align="right">46.73</td>
+								<td align="right">-72.56</td>
+								<td align="right">31.92</td>
+								<td align="right">53</td>
+								<td align="right">80</td>
+								<td align="right">6.64</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>bure</td>
+								<td>ET</td>
+								<td>Ethiopia</td>
+								<td align="right">10.35</td>
+								<td align="right">36.9</td>
+								<td align="right">35.6</td>
+								<td align="right">74</td>
+								<td align="right">0</td>
+								<td align="right">13.42</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>pevek</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">69.7</td>
+								<td align="right">170.27</td>
+								<td align="right">18.33</td>
+								<td align="right">72</td>
+								<td align="right">20</td>
+								<td align="right">10.45</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>kirakira</td>
+								<td>SB</td>
+								<td>Solomon Islands</td>
+								<td align="right">-10.46</td>
+								<td align="right">161.92</td>
+								<td align="right">76.29</td>
+								<td align="right">100</td>
+								<td align="right">92</td>
+								<td align="right">7.65</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>beringovskiy</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">63.05</td>
+								<td align="right">179.32</td>
+								<td align="right">28.05</td>
+								<td align="right">96</td>
+								<td align="right">76</td>
+								<td align="right">5.19</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>niamey</td>
+								<td>NE</td>
+								<td>Niger</td>
+								<td align="right">13.52</td>
+								<td align="right">2.11</td>
+								<td align="right">102.2</td>
+								<td align="right">5</td>
+								<td align="right">0</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>harlingen</td>
+								<td>NL</td>
+								<td>Netherlands</td>
+								<td align="right">53.18</td>
+								<td align="right">5.41</td>
+								<td align="right">47.12</td>
+								<td align="right">76</td>
+								<td align="right">75</td>
+								<td align="right">12.75</td>
+								<td>4/2/2018 11:25</td>
+								</tr>
+								<tr>
+								<td>attawapiskat</td>
+								<td>CA</td>
+								<td>Canada</td>
+								<td align="right">60.55</td>
+								<td align="right">-80.4</td>
+								<td align="right">84.2</td>
+								<td align="right">66</td>
+								<td align="right">20</td>
+								<td align="right">2.24</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>ahipara</td>
+								<td>NZ</td>
+								<td>New Zealand</td>
+								<td align="right">-35.17</td>
+								<td align="right">173.16</td>
+								<td align="right">50.73</td>
+								<td align="right">100</td>
+								<td align="right">0</td>
+								<td align="right">3.4</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>manzanares</td>
+								<td>ES</td>
+								<td>Spain</td>
+								<td align="right">39</td>
+								<td align="right">-3.37</td>
+								<td align="right">59.55</td>
+								<td align="right">47</td>
+								<td align="right">0</td>
+								<td align="right">12.46</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>fevralsk</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">54.39</td>
+								<td align="right">130.26</td>
+								<td align="right">73.4</td>
+								<td align="right">100</td>
+								<td align="right">90</td>
+								<td align="right">20.29</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>kutum</td>
+								<td>SD</td>
+								<td>Sudan</td>
+								<td align="right">14.2</td>
+								<td align="right">24.66</td>
+								<td align="right">67.92</td>
+								<td align="right">18</td>
+								<td align="right">0</td>
+								<td align="right">7.31</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>tokomaru</td>
+								<td>NZ</td>
+								<td>New Zealand</td>
+								<td align="right">-40.47</td>
+								<td align="right">175.51</td>
+								<td align="right">56.13</td>
+								<td align="right">92</td>
+								<td align="right">100</td>
+								<td align="right">9.22</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>anjiang</td>
+								<td>CN</td>
+								<td>China</td>
+								<td align="right">27.32</td>
+								<td align="right">110.14</td>
+								<td align="right">63.42</td>
+								<td align="right">100</td>
+								<td align="right">92</td>
+								<td align="right">2.28</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>sierpc</td>
+								<td>PL</td>
+								<td>Poland</td>
+								<td align="right">52.85</td>
+								<td align="right">19.67</td>
+								<td align="right">37.77</td>
+								<td align="right">80</td>
+								<td align="right">0</td>
+								<td align="right">11.79</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>taolanaro</td>
+								<td>MG</td>
+								<td>Madagascar</td>
+								<td align="right">-42.31</td>
+								<td align="right">52.41</td>
+								<td align="right">74.03</td>
+								<td align="right">18</td>
+								<td align="right">1</td>
+								<td align="right">20.8</td>
+								<td>4/2/2018 11:35</td>
+								</tr>
+								<tr>
+								<td>guimaraes</td>
+								<td>PT</td>
+								<td>Portugal</td>
+								<td align="right">41.44</td>
+								<td align="right">-8.3</td>
+								<td align="right">58.3</td>
+								<td align="right">93</td>
+								<td align="right">90</td>
+								<td align="right">17.22</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>taolanaro</td>
+								<td>MG</td>
+								<td>Madagascar</td>
+								<td align="right">-75.08</td>
+								<td align="right">65.64</td>
+								<td align="right">66.2</td>
+								<td align="right">82</td>
+								<td align="right">80</td>
+								<td align="right">1.12</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>tommot</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">58.97</td>
+								<td align="right">126.27</td>
+								<td align="right">13.65</td>
+								<td align="right">65</td>
+								<td align="right">80</td>
+								<td align="right">13.24</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>sola</td>
+								<td>VU</td>
+								<td>Vanuatu</td>
+								<td align="right">-13.88</td>
+								<td align="right">167.55</td>
+								<td align="right">76.92</td>
+								<td align="right">100</td>
+								<td align="right">92</td>
+								<td align="right">9.66</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>illoqqortoormiut</td>
+								<td>GL</td>
+								<td>Greenland</td>
+								<td align="right">83.5</td>
+								<td align="right">-30.06</td>
+								<td align="right">51.8</td>
+								<td align="right">93</td>
+								<td align="right">64</td>
+								<td align="right">20.8</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>illoqqortoormiut</td>
+								<td>GL</td>
+								<td>Greenland</td>
+								<td align="right">87.14</td>
+								<td align="right">-12.37</td>
+								<td align="right">73.23</td>
+								<td align="right">100</td>
+								<td align="right">56</td>
+								<td align="right">5.19</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>belushya guba</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">85.7</td>
+								<td align="right">56.38</td>
+								<td align="right">24.8</td>
+								<td align="right">62</td>
+								<td align="right">40</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 10:50</td>
+								</tr>
+								<tr>
+								<td>aki</td>
+								<td>JP</td>
+								<td>Japan</td>
+								<td align="right">33.51</td>
+								<td align="right">133.91</td>
+								<td align="right">47.22</td>
+								<td align="right">100</td>
+								<td align="right">0</td>
+								<td align="right">0.6</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>pumiao</td>
+								<td>CN</td>
+								<td>China</td>
+								<td align="right">22.75</td>
+								<td align="right">108.49</td>
+								<td align="right">68</td>
+								<td align="right">82</td>
+								<td align="right">0</td>
+								<td align="right">2.24</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>quatre cocos</td>
+								<td>MU</td>
+								<td>Mauritius</td>
+								<td align="right">-20.21</td>
+								<td align="right">57.76</td>
+								<td align="right">80.6</td>
+								<td align="right">83</td>
+								<td align="right">40</td>
+								<td align="right">3.36</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>porbandar</td>
+								<td>IN</td>
+								<td>India</td>
+								<td align="right">21.64</td>
+								<td align="right">69.61</td>
+								<td align="right">74.04</td>
+								<td align="right">86</td>
+								<td align="right">0</td>
+								<td align="right">8.32</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>zumarraga</td>
+								<td>ES</td>
+								<td>Spain</td>
+								<td align="right">43.09</td>
+								<td align="right">-2.32</td>
+								<td align="right">65.3</td>
+								<td align="right">44</td>
+								<td align="right">75</td>
+								<td align="right">16.11</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>hecun</td>
+								<td>CN</td>
+								<td>China</td>
+								<td align="right">29.94</td>
+								<td align="right">119.31</td>
+								<td align="right">62.34</td>
+								<td align="right">99</td>
+								<td align="right">56</td>
+								<td align="right">1.83</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>duz</td>
+								<td>TN</td>
+								<td>Tunisia</td>
+								<td align="right">31.37</td>
+								<td align="right">8.18</td>
+								<td align="right">18.33</td>
+								<td align="right">72</td>
+								<td align="right">20</td>
+								<td align="right">10.45</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>mataura</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-46.16</td>
+								<td align="right">-146.79</td>
+								<td align="right">48.2</td>
+								<td align="right">93</td>
+								<td align="right">75</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>basco</td>
+								<td>PH</td>
+								<td>Philippines</td>
+								<td align="right">20.45</td>
+								<td align="right">121.97</td>
+								<td align="right">75.84</td>
+								<td align="right">100</td>
+								<td align="right">88</td>
+								<td align="right">14.7</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>illoqqortoormiut</td>
+								<td>GL</td>
+								<td>Greenland</td>
+								<td align="right">85.2</td>
+								<td align="right">-16.37</td>
+								<td align="right">76.29</td>
+								<td align="right">100</td>
+								<td align="right">92</td>
+								<td align="right">7.65</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>marcona</td>
+								<td>PE</td>
+								<td>Peru</td>
+								<td align="right">-23.01</td>
+								<td align="right">-84.58</td>
+								<td align="right">28.05</td>
+								<td align="right">96</td>
+								<td align="right">76</td>
+								<td align="right">5.19</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>aloleng</td>
+								<td>PH</td>
+								<td>Philippines</td>
+								<td align="right">16.13</td>
+								<td align="right">119.78</td>
+								<td align="right">75.75</td>
+								<td align="right">100</td>
+								<td align="right">76</td>
+								<td align="right">6.76</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>sao felix do xingu</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-6.64</td>
+								<td align="right">-51.99</td>
+								<td align="right">84.12</td>
+								<td align="right">76</td>
+								<td align="right">36</td>
+								<td align="right">2.73</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>umzimvubu</td>
+								<td>ZA</td>
+								<td>South Africa</td>
+								<td align="right">-31.87</td>
+								<td align="right">29.49</td>
+								<td align="right">84.2</td>
+								<td align="right">66</td>
+								<td align="right">20</td>
+								<td align="right">2.24</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>boksitogorsk</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">59.47</td>
+								<td align="right">33.85</td>
+								<td align="right">39.03</td>
+								<td align="right">92</td>
+								<td align="right">92</td>
+								<td align="right">12.8</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>yate</td>
+								<td>NC</td>
+								<td>New Caledonia</td>
+								<td align="right">-21.71</td>
+								<td align="right">166.84</td>
+								<td align="right">73.4</td>
+								<td align="right">100</td>
+								<td align="right">90</td>
+								<td align="right">20.29</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>agropoli</td>
+								<td>IT</td>
+								<td>Italy</td>
+								<td align="right">40.35</td>
+								<td align="right">15</td>
+								<td align="right">52.89</td>
+								<td align="right">100</td>
+								<td align="right">0</td>
+								<td align="right">1.95</td>
+								<td>4/2/2018 11:49</td>
+								</tr>
+								<tr>
+								<td>waipawa</td>
+								<td>NZ</td>
+								<td>New Zealand</td>
+								<td align="right">-39.94</td>
+								<td align="right">176.59</td>
+								<td align="right">56.04</td>
+								<td align="right">87</td>
+								<td align="right">12</td>
+								<td align="right">9.44</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>ostrovnoy</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">68.05</td>
+								<td align="right">39.51</td>
+								<td align="right">23.46</td>
+								<td align="right">89</td>
+								<td align="right">80</td>
+								<td align="right">13.02</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>yanam</td>
+								<td>IN</td>
+								<td>India</td>
+								<td align="right">16.73</td>
+								<td align="right">82.22</td>
+								<td align="right">80.43</td>
+								<td align="right">82</td>
+								<td align="right">0</td>
+								<td align="right">9.22</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>kawhia</td>
+								<td>NZ</td>
+								<td>New Zealand</td>
+								<td align="right">-38.07</td>
+								<td align="right">174.82</td>
+								<td align="right">64.32</td>
+								<td align="right">96</td>
+								<td align="right">88</td>
+								<td align="right">8.55</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>grand river south east</td>
+								<td>MU</td>
+								<td>Mauritius</td>
+								<td align="right">-18.65</td>
+								<td align="right">75.14</td>
+								<td align="right">78.45</td>
+								<td align="right">100</td>
+								<td align="right">92</td>
+								<td align="right">6.42</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>souillac</td>
+								<td>MU</td>
+								<td>Mauritius</td>
+								<td align="right">-20.52</td>
+								<td align="right">57.52</td>
+								<td align="right">80.6</td>
+								<td align="right">83</td>
+								<td align="right">40</td>
+								<td align="right">3.36</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>illoqqortoormiut</td>
+								<td>GL</td>
+								<td>Greenland</td>
+								<td align="right">73.27</td>
+								<td align="right">-25.05</td>
+								<td align="right">58.3</td>
+								<td align="right">93</td>
+								<td align="right">90</td>
+								<td align="right">17.22</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>salalah</td>
+								<td>OM</td>
+								<td>Oman</td>
+								<td align="right">17.01</td>
+								<td align="right">54.1</td>
+								<td align="right">80.6</td>
+								<td align="right">78</td>
+								<td align="right">75</td>
+								<td align="right">3.36</td>
+								<td>4/2/2018 10:50</td>
+								</tr>
+								<tr>
+								<td>mandurah</td>
+								<td>AU</td>
+								<td>Australia</td>
+								<td align="right">-32.55</td>
+								<td align="right">115.7</td>
+								<td align="right">73.4</td>
+								<td align="right">64</td>
+								<td align="right">24</td>
+								<td align="right">11.41</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>rio gallegos</td>
+								<td>AR</td>
+								<td>Argentina</td>
+								<td align="right">-51.62</td>
+								<td align="right">-69.22</td>
+								<td align="right">64.4</td>
+								<td align="right">63</td>
+								<td align="right">40</td>
+								<td align="right">2.24</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>rakiv lis</td>
+								<td>UA</td>
+								<td>Ukraine</td>
+								<td align="right">51.62</td>
+								<td align="right">24.92</td>
+								<td align="right">37.77</td>
+								<td align="right">88</td>
+								<td align="right">88</td>
+								<td align="right">16.71</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>bathsheba</td>
+								<td>BB</td>
+								<td>Barbados</td>
+								<td align="right">13.22</td>
+								<td align="right">-59.52</td>
+								<td align="right">84.2</td>
+								<td align="right">70</td>
+								<td align="right">20</td>
+								<td align="right">16.11</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>taolanaro</td>
+								<td>MG</td>
+								<td>Madagascar</td>
+								<td align="right">-60.44</td>
+								<td align="right">52.53</td>
+								<td align="right">82.4</td>
+								<td align="right">69</td>
+								<td align="right">40</td>
+								<td align="right">12.75</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>barentsburg</td>
+								<td>SJ</td>
+								<td>Svalbard and Jan Mayen</td>
+								<td align="right">76.36</td>
+								<td align="right">10.44</td>
+								<td align="right">80.6</td>
+								<td align="right">83</td>
+								<td align="right">40</td>
+								<td align="right">3.36</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>berezovyy</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">51.67</td>
+								<td align="right">135.7</td>
+								<td align="right">21.93</td>
+								<td align="right">54</td>
+								<td align="right">0</td>
+								<td align="right">10</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>lisala</td>
+								<td>CD</td>
+								<td>Congo, The Democratic Republic of the</td>
+								<td align="right">2.15</td>
+								<td align="right">21.52</td>
+								<td align="right">74.22</td>
+								<td align="right">97</td>
+								<td align="right">36</td>
+								<td align="right">2.62</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>hollins</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">37.35</td>
+								<td align="right">-79.95</td>
+								<td align="right">54.77</td>
+								<td align="right">59</td>
+								<td align="right">90</td>
+								<td align="right">8.05</td>
+								<td>4/2/2018 11:15</td>
+								</tr>
+								<tr>
+								<td>mahon</td>
+								<td>ES</td>
+								<td>Spain</td>
+								<td align="right">39.44</td>
+								<td align="right">5.88</td>
+								<td align="right">75.84</td>
+								<td align="right">100</td>
+								<td align="right">88</td>
+								<td align="right">14.7</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>lujiang</td>
+								<td>CN</td>
+								<td>China</td>
+								<td align="right">31.26</td>
+								<td align="right">117.28</td>
+								<td align="right">64.4</td>
+								<td align="right">100</td>
+								<td align="right">0</td>
+								<td align="right">6.71</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>nouadhibou</td>
+								<td>MR</td>
+								<td>Mauritania</td>
+								<td align="right">20.93</td>
+								<td align="right">-17.03</td>
+								<td align="right">68</td>
+								<td align="right">68</td>
+								<td align="right">0</td>
+								<td align="right">19.46</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>concordia</td>
+								<td>MX</td>
+								<td>Mexico</td>
+								<td align="right">23.29</td>
+								<td align="right">-106.07</td>
+								<td align="right">82.4</td>
+								<td align="right">48</td>
+								<td align="right">5</td>
+								<td align="right">5.82</td>
+								<td>4/2/2018 10:40</td>
+								</tr>
+								<tr>
+								<td>pinega</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">64.7</td>
+								<td align="right">43.39</td>
+								<td align="right">31.2</td>
+								<td align="right">80</td>
+								<td align="right">92</td>
+								<td align="right">12.8</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>batemans bay</td>
+								<td>AU</td>
+								<td>Australia</td>
+								<td align="right">-35.71</td>
+								<td align="right">150.18</td>
+								<td align="right">61.62</td>
+								<td align="right">100</td>
+								<td align="right">68</td>
+								<td align="right">3.96</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>mataura</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-38.68</td>
+								<td align="right">-152.01</td>
+								<td align="right">56.04</td>
+								<td align="right">87</td>
+								<td align="right">12</td>
+								<td align="right">9.44</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>nizhneyansk</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">81.37</td>
+								<td align="right">137.39</td>
+								<td align="right">80.43</td>
+								<td align="right">82</td>
+								<td align="right">0</td>
+								<td align="right">9.22</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>guia de isora</td>
+								<td>ES</td>
+								<td>Spain</td>
+								<td align="right">28.21</td>
+								<td align="right">-16.78</td>
+								<td align="right">64.31</td>
+								<td align="right">72</td>
+								<td align="right">20</td>
+								<td align="right">12.75</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>mataura</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-53.67</td>
+								<td align="right">-155.36</td>
+								<td align="right">64.32</td>
+								<td align="right">96</td>
+								<td align="right">88</td>
+								<td align="right">8.55</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>belaya gora</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">68.54</td>
+								<td align="right">146.19</td>
+								<td align="right">1.14</td>
+								<td align="right">51</td>
+								<td align="right">8</td>
+								<td align="right">6.42</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>acarau</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">7.2</td>
+								<td align="right">-39.32</td>
+								<td align="right">21.2</td>
+								<td align="right">73</td>
+								<td align="right">1</td>
+								<td align="right">19.46</td>
+								<td>4/2/2018 10:53</td>
+								</tr>
+								<tr>
+								<td>bauru</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-22.32</td>
+								<td align="right">-49.07</td>
+								<td align="right">81.51</td>
+								<td align="right">79</td>
+								<td align="right">44</td>
+								<td align="right">11.68</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>grindavik</td>
+								<td>IS</td>
+								<td>Iceland</td>
+								<td align="right">63.84</td>
+								<td align="right">-22.43</td>
+								<td align="right">32.86</td>
+								<td align="right">86</td>
+								<td align="right">90</td>
+								<td align="right">13.87</td>
+								<td>4/2/2018 11:25</td>
+								</tr>
+								<tr>
+								<td>singaparna</td>
+								<td>ID</td>
+								<td>Indonesia</td>
+								<td align="right">-7.35</td>
+								<td align="right">108.11</td>
+								<td align="right">66.57</td>
+								<td align="right">96</td>
+								<td align="right">24</td>
+								<td align="right">1.61</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>iqaluit</td>
+								<td>CA</td>
+								<td>Canada</td>
+								<td align="right">63.75</td>
+								<td align="right">-68.52</td>
+								<td align="right">33.8</td>
+								<td align="right">74</td>
+								<td align="right">75</td>
+								<td align="right">27.51</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>grand river south east</td>
+								<td>MU</td>
+								<td>Mauritius</td>
+								<td align="right">-25.04</td>
+								<td align="right">75.15</td>
+								<td align="right">82.4</td>
+								<td align="right">69</td>
+								<td align="right">40</td>
+								<td align="right">12.75</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>margate</td>
+								<td>ZA</td>
+								<td>South Africa</td>
+								<td align="right">-30.86</td>
+								<td align="right">30.37</td>
+								<td align="right">78.45</td>
+								<td align="right">87</td>
+								<td align="right">68</td>
+								<td align="right">18.5</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>umm kaddadah</td>
+								<td>SD</td>
+								<td>Sudan</td>
+								<td align="right">13.6</td>
+								<td align="right">26.69</td>
+								<td align="right">72.15</td>
+								<td align="right">11</td>
+								<td align="right">0</td>
+								<td align="right">7.09</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>togur</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">58.36</td>
+								<td align="right">82.83</td>
+								<td align="right">22.47</td>
+								<td align="right">92</td>
+								<td align="right">64</td>
+								<td align="right">7.65</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>oskemen</td>
+								<td>KZ</td>
+								<td>Kazakhstan</td>
+								<td align="right">49.96</td>
+								<td align="right">82.61</td>
+								<td align="right">30.2</td>
+								<td align="right">80</td>
+								<td align="right">90</td>
+								<td align="right">2.24</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>muros</td>
+								<td>ES</td>
+								<td>Spain</td>
+								<td align="right">42.77</td>
+								<td align="right">-9.06</td>
+								<td align="right">51.8</td>
+								<td align="right">93</td>
+								<td align="right">75</td>
+								<td align="right">16.11</td>
+								<td>4/2/2018 11:30</td>
+								</tr>
+								<tr>
+								<td>sept-iles</td>
+								<td>CA</td>
+								<td>Canada</td>
+								<td align="right">50.2</td>
+								<td align="right">-66.38</td>
+								<td align="right">26.6</td>
+								<td align="right">25</td>
+								<td align="right">20</td>
+								<td align="right">13.87</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>mortka</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">59.33</td>
+								<td align="right">66.02</td>
+								<td align="right">28.5</td>
+								<td align="right">84</td>
+								<td align="right">68</td>
+								<td align="right">4.63</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>candido mendes</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-1.45</td>
+								<td align="right">-45.72</td>
+								<td align="right">83.31</td>
+								<td align="right">97</td>
+								<td align="right">80</td>
+								<td align="right">11.34</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>weatherford</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">32.76</td>
+								<td align="right">-97.8</td>
+								<td align="right">45.27</td>
+								<td align="right">87</td>
+								<td align="right">90</td>
+								<td align="right">4.63</td>
+								<td>4/2/2018 11:15</td>
+								</tr>
+								<tr>
+								<td>samusu</td>
+								<td>WS</td>
+								<td>Samoa</td>
+								<td align="right">-11.25</td>
+								<td align="right">-163.7</td>
+								<td align="right">85.62</td>
+								<td align="right">30</td>
+								<td align="right">5</td>
+								<td align="right">14.99</td>
+								<td>4/2/2018 10:46</td>
+								</tr>
+								<tr>
+								<td>mataura</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-54.06</td>
+								<td align="right">-143.28</td>
+								<td align="right">56.04</td>
+								<td align="right">87</td>
+								<td align="right">12</td>
+								<td align="right">9.44</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>manaure</td>
+								<td>CO</td>
+								<td>Colombia</td>
+								<td align="right">11.78</td>
+								<td align="right">-72.45</td>
+								<td align="right">84.2</td>
+								<td align="right">70</td>
+								<td align="right">40</td>
+								<td align="right">13.87</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>cabedelo</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-6.97</td>
+								<td align="right">-34.84</td>
+								<td align="right">86</td>
+								<td align="right">66</td>
+								<td align="right">20</td>
+								<td align="right">12.75</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>khorixas</td>
+								<td>NA</td>
+								<td>Namibia</td>
+								<td align="right">-20.37</td>
+								<td align="right">14.96</td>
+								<td align="right">70.62</td>
+								<td align="right">87</td>
+								<td align="right">88</td>
+								<td align="right">4.63</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>adrar</td>
+								<td>DZ</td>
+								<td>Algeria</td>
+								<td align="right">27.87</td>
+								<td align="right">-0.29</td>
+								<td align="right">82.4</td>
+								<td align="right">14</td>
+								<td align="right">90</td>
+								<td align="right">42.5</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>arman</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">59.7</td>
+								<td align="right">150.17</td>
+								<td align="right">24.8</td>
+								<td align="right">100</td>
+								<td align="right">90</td>
+								<td align="right">8.95</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>katobu</td>
+								<td>ID</td>
+								<td>Indonesia</td>
+								<td align="right">-4.94</td>
+								<td align="right">122.53</td>
+								<td align="right">82.59</td>
+								<td align="right">94</td>
+								<td align="right">24</td>
+								<td align="right">7.31</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>vanimo</td>
+								<td>PG</td>
+								<td>Papua New Guinea</td>
+								<td align="right">-2.67</td>
+								<td align="right">141.3</td>
+								<td align="right">82.95</td>
+								<td align="right">100</td>
+								<td align="right">92</td>
+								<td align="right">13.13</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>amderma</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">73.12</td>
+								<td align="right">64.31</td>
+								<td align="right">82.4</td>
+								<td align="right">69</td>
+								<td align="right">40</td>
+								<td align="right">12.75</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>aden</td>
+								<td>YE</td>
+								<td>Yemen</td>
+								<td align="right">12.79</td>
+								<td align="right">45.03</td>
+								<td align="right">80.97</td>
+								<td align="right">97</td>
+								<td align="right">0</td>
+								<td align="right">10.89</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>temaraia</td>
+								<td>KI</td>
+								<td>Kiribati</td>
+								<td align="right">-1.58</td>
+								<td align="right">172.02</td>
+								<td align="right">2.85</td>
+								<td align="right">84</td>
+								<td align="right">0</td>
+								<td align="right">6.53</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>comodoro rivadavia</td>
+								<td>AR</td>
+								<td>Argentina</td>
+								<td align="right">-45.87</td>
+								<td align="right">-67.48</td>
+								<td align="right">80.6</td>
+								<td align="right">36</td>
+								<td align="right">20</td>
+								<td align="right">21.92</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>mataura</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-89.27</td>
+								<td align="right">-166.06</td>
+								<td align="right">22.47</td>
+								<td align="right">92</td>
+								<td align="right">64</td>
+								<td align="right">7.65</td>
+								<td>4/2/2018 11:54</td>
+								</tr>
+								<tr>
+								<td>mumford</td>
+								<td>GH</td>
+								<td>Ghana</td>
+								<td align="right">5.26</td>
+								<td align="right">-0.76</td>
+								<td align="right">82.05</td>
+								<td align="right">84</td>
+								<td align="right">0</td>
+								<td align="right">12.12</td>
+								<td>4/2/2018 11:55</td>
+								</tr>
+								<tr>
+								<td>ankazoabo</td>
+								<td>MG</td>
+								<td>Madagascar</td>
+								<td align="right">-22.29</td>
+								<td align="right">44.51</td>
+								<td align="right">72.51</td>
+								<td align="right">80</td>
+								<td align="right">44</td>
+								<td align="right">3.51</td>
+								<td>4/2/2018 11:55</td>
+								</tr>
+								<tr>
+								<td>illoqqortoormiut</td>
+								<td>GL</td>
+								<td>Greenland</td>
+								<td align="right">76.63</td>
+								<td align="right">-13.64</td>
+								<td align="right">45.27</td>
+								<td align="right">87</td>
+								<td align="right">90</td>
+								<td align="right">4.63</td>
+								<td>4/2/2018 11:15</td>
+								</tr>
+								<tr>
+								<td>collie</td>
+								<td>AU</td>
+								<td>Australia</td>
+								<td align="right">-33.36</td>
+								<td align="right">116.15</td>
+								<td align="right">65.76</td>
+								<td align="right">82</td>
+								<td align="right">0</td>
+								<td align="right">9.66</td>
+								<td>4/2/2018 11:55</td>
+								</tr>
+								<tr>
+								<td>san cristobal</td>
+								<td>EC</td>
+								<td>Ecuador</td>
+								<td align="right">-1.02</td>
+								<td align="right">-79.44</td>
+								<td align="right">65.67</td>
+								<td align="right">100</td>
+								<td align="right">92</td>
+								<td align="right">3.4</td>
+								<td>4/2/2018 11:55</td>
+								</tr>
+								<tr>
+								<td>batagay-alyta</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">67.8</td>
+								<td align="right">130.41</td>
+								<td align="right">4.47</td>
+								<td align="right">73</td>
+								<td align="right">76</td>
+								<td align="right">3.85</td>
+								<td>4/2/2018 11:55</td>
+								</tr>
+								<tr>
+								<td>kemijarvi</td>
+								<td>FI</td>
+								<td>Finland</td>
+								<td align="right">68.1</td>
+								<td align="right">27.39</td>
+								<td align="right">-10.38</td>
+								<td align="right">70</td>
+								<td align="right">48</td>
+								<td align="right">5.64</td>
+								<td>4/2/2018 11:50</td>
+								</tr>
+								<tr>
+								<td>ust-nera</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">64.57</td>
+								<td align="right">143.24</td>
+								<td align="right">5.73</td>
+								<td align="right">73</td>
+								<td align="right">76</td>
+								<td align="right">2.62</td>
+								<td>4/2/2018 11:55</td>
+								</tr>
+								<tr>
+								<td>umzimvubu</td>
+								<td>ZA</td>
+								<td>South Africa</td>
+								<td align="right">-52.64</td>
+								<td align="right">47.01</td>
+								<td align="right">86</td>
+								<td align="right">66</td>
+								<td align="right">20</td>
+								<td align="right">12.75</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>georgiyevka</td>
+								<td>KZ</td>
+								<td>Kazakhstan</td>
+								<td align="right">43.04</td>
+								<td align="right">74.71</td>
+								<td align="right">36.42</td>
+								<td align="right">86</td>
+								<td align="right">68</td>
+								<td align="right">2.95</td>
+								<td>4/2/2018 11:55</td>
+								</tr>
+								<tr>
+								<td>stykkisholmur</td>
+								<td>IS</td>
+								<td>Iceland</td>
+								<td align="right">65.08</td>
+								<td align="right">-22.73</td>
+								<td align="right">34.17</td>
+								<td align="right">100</td>
+								<td align="right">44</td>
+								<td align="right">12.01</td>
+								<td>4/2/2018 11:55</td>
+								</tr>
+								<tr>
+								<td>yurimaguas</td>
+								<td>PE</td>
+								<td>Peru</td>
+								<td align="right">-5.9</td>
+								<td align="right">-76.1</td>
+								<td align="right">75.2</td>
+								<td align="right">100</td>
+								<td align="right">90</td>
+								<td align="right">6.93</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>inverness</td>
+								<td>GB</td>
+								<td>United Kingdom</td>
+								<td align="right">57.48</td>
+								<td align="right">-4.23</td>
+								<td align="right">38.07</td>
+								<td align="right">93</td>
+								<td align="right">40</td>
+								<td align="right">12.75</td>
+								<td>4/2/2018 11:20</td>
+								</tr>
+								<tr>
+								<td>barentsburg</td>
+								<td>SJ</td>
+								<td>Svalbard and Jan Mayen</td>
+								<td align="right">89.03</td>
+								<td align="right">-1.26</td>
+								<td align="right">91.4</td>
+								<td align="right">63</td>
+								<td align="right">75</td>
+								<td align="right">5.82</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>itarema</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-2.92</td>
+								<td align="right">-39.92</td>
+								<td align="right">79.71</td>
+								<td align="right">95</td>
+								<td align="right">68</td>
+								<td align="right">8.55</td>
+								<td>4/2/2018 11:55</td>
+								</tr>
+								<tr>
+								<td>samusu</td>
+								<td>WS</td>
+								<td>Samoa</td>
+								<td align="right">-3.31</td>
+								<td align="right">-164.47</td>
+								<td align="right">84.2</td>
+								<td align="right">66</td>
+								<td align="right">75</td>
+								<td align="right">4.18</td>
+								<td>4/2/2018 12:00</td>
+								</tr>
+								<tr>
+								<td>bengkulu</td>
+								<td>ID</td>
+								<td>Indonesia</td>
+								<td align="right">-13.23</td>
+								<td align="right">96.12</td>
+								<td align="right">77.97</td>
+								<td align="right">78</td>
+								<td align="right">0</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>inuvik</td>
+								<td>CA</td>
+								<td>Canada</td>
+								<td align="right">68.36</td>
+								<td align="right">-133.71</td>
+								<td align="right">1.29</td>
+								<td align="right">71</td>
+								<td align="right">75</td>
+								<td align="right">13.87</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>marcona</td>
+								<td>PE</td>
+								<td>Peru</td>
+								<td align="right">-20.7</td>
+								<td align="right">-81.49</td>
+								<td align="right">70.57</td>
+								<td align="right">94</td>
+								<td align="right">90</td>
+								<td align="right">12.75</td>
+								<td>4/2/2018 11:36</td>
+								</tr>
+								<tr>
+								<td>umzimvubu</td>
+								<td>ZA</td>
+								<td>South Africa</td>
+								<td align="right">-41.6</td>
+								<td align="right">37.37</td>
+								<td align="right">65.85</td>
+								<td align="right">89</td>
+								<td align="right">64</td>
+								<td align="right">4.63</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>fredericksburg</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">38.3</td>
+								<td align="right">-77.46</td>
+								<td align="right">49.84</td>
+								<td align="right">71</td>
+								<td align="right">90</td>
+								<td align="right">9.17</td>
+								<td>4/2/2018 11:15</td>
+								</tr>
+								<tr>
+								<td>guaraniacu</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-25.1</td>
+								<td align="right">-52.88</td>
+								<td align="right">78.8</td>
+								<td align="right">65</td>
+								<td align="right">40</td>
+								<td align="right">9.17</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>tabuk</td>
+								<td>SA</td>
+								<td>Saudi Arabia</td>
+								<td align="right">28.38</td>
+								<td align="right">36.58</td>
+								<td align="right">82.4</td>
+								<td align="right">14</td>
+								<td align="right">0</td>
+								<td align="right">6.93</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>ust-ishim</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">57.69</td>
+								<td align="right">71.17</td>
+								<td align="right">22.2</td>
+								<td align="right">81</td>
+								<td align="right">0</td>
+								<td align="right">8.21</td>
+								<td>4/2/2018 11:55</td>
+								</tr>
+								<tr>
+								<td>mataura</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-72.93</td>
+								<td align="right">-157.93</td>
+								<td align="right">38.07</td>
+								<td align="right">93</td>
+								<td align="right">40</td>
+								<td align="right">12.75</td>
+								<td>4/2/2018 11:20</td>
+								</tr>
+								<tr>
+								<td>amderma</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">80.54</td>
+								<td align="right">65.78</td>
+								<td align="right">80.43</td>
+								<td align="right">100</td>
+								<td align="right">76</td>
+								<td align="right">17.6</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+								<tr>
+								<td>rawson</td>
+								<td>AR</td>
+								<td>Argentina</td>
+								<td align="right">-43.3</td>
+								<td align="right">-65.11</td>
+								<td align="right">87</td>
+								<td align="right">27</td>
+								<td align="right">0</td>
+								<td align="right">10.67</td>
+								<td>4/2/2018 11:55</td>
+								</tr>
+								<tr>
+								<td>seydi</td>
+								<td>TM</td>
+								<td>Turkmenistan</td>
+								<td align="right">39.48</td>
+								<td align="right">62.91</td>
+								<td align="right">56.49</td>
+								<td align="right">62</td>
+								<td align="right">68</td>
+								<td align="right">12.46</td>
+								<td>4/2/2018 11:55</td>
+								</tr>
+								<tr>
+								<td>tambovka</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">47.32</td>
+								<td align="right">47.38</td>
+								<td align="right">44.61</td>
+								<td align="right">66</td>
+								<td align="right">0</td>
+								<td align="right">19.95</td>
+								<td>4/2/2018 11:55</td>
+								</tr>
+								<tr>
+								<td>otane</td>
+								<td>NZ</td>
+								<td>New Zealand</td>
+								<td align="right">-39.89</td>
+								<td align="right">176.62</td>
+								<td align="right">43.17</td>
+								<td align="right">93</td>
+								<td align="right">20</td>
+								<td align="right">3.29</td>
+								<td>4/2/2018 11:55</td>
+								</tr>
+								<tr>
+								<td>carutapera</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-1.2</td>
+								<td align="right">-46.02</td>
+								<td align="right">83.04</td>
+								<td align="right">84</td>
+								<td align="right">92</td>
+								<td align="right">8.1</td>
+								<td>4/2/2018 11:55</td>
+								</tr>
+								<tr>
+								<td>tsihombe</td>
+								<td>MG</td>
+								<td>Madagascar</td>
+								<td align="right">-37.2</td>
+								<td align="right">47.57</td>
+								<td align="right">1.29</td>
+								<td align="right">71</td>
+								<td align="right">75</td>
+								<td align="right">13.87</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>chuy</td>
+								<td>UY</td>
+								<td>Uruguay</td>
+								<td align="right">-33.69</td>
+								<td align="right">-53.46</td>
+								<td align="right">73.59</td>
+								<td align="right">88</td>
+								<td align="right">68</td>
+								<td align="right">11.56</td>
+								<td>4/2/2018 11:55</td>
+								</tr>
+								<tr>
+								<td>amderma</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">89.48</td>
+								<td align="right">62.46</td>
+								<td align="right">-2.21</td>
+								<td align="right">53</td>
+								<td align="right">20</td>
+								<td align="right">8.05</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>talcahuano</td>
+								<td>CL</td>
+								<td>Chile</td>
+								<td align="right">-36.72</td>
+								<td align="right">-73.12</td>
+								<td align="right">55.4</td>
+								<td align="right">87</td>
+								<td align="right">90</td>
+								<td align="right">11.41</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>taolanaro</td>
+								<td>MG</td>
+								<td>Madagascar</td>
+								<td align="right">-54.38</td>
+								<td align="right">59.04</td>
+								<td align="right">70.57</td>
+								<td align="right">94</td>
+								<td align="right">90</td>
+								<td align="right">12.75</td>
+								<td>4/2/2018 11:36</td>
+								</tr>
+								<tr>
+								<td>gorgan</td>
+								<td>IR</td>
+								<td>Iran, Islamic Republic of</td>
+								<td align="right">36.84</td>
+								<td align="right">54.43</td>
+								<td align="right">46.4</td>
+								<td align="right">93</td>
+								<td align="right">0</td>
+								<td align="right">1.95</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>taolanaro</td>
+								<td>MG</td>
+								<td>Madagascar</td>
+								<td align="right">-48.1</td>
+								<td align="right">56.26</td>
+								<td align="right">67.92</td>
+								<td align="right">18</td>
+								<td align="right">0</td>
+								<td align="right">7.31</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>altamont</td>
+								<td>US</td>
+								<td>United States</td>
+								<td align="right">37.19</td>
+								<td align="right">-95.3</td>
+								<td align="right">38.1</td>
+								<td align="right">93</td>
+								<td align="right">90</td>
+								<td align="right">4.7</td>
+								<td>4/2/2018 11:45</td>
+								</tr>
+								<tr>
+								<td>sibanicu</td>
+								<td>CU</td>
+								<td>Cuba</td>
+								<td align="right">21.23</td>
+								<td align="right">-77.53</td>
+								<td align="right">84.2</td>
+								<td align="right">45</td>
+								<td align="right">40</td>
+								<td align="right">10.29</td>
+								<td>4/2/2018 10:50</td>
+								</tr>
+								<tr>
+								<td>teknaf</td>
+								<td>BD</td>
+								<td>Bangladesh</td>
+								<td align="right">20.86</td>
+								<td align="right">92.31</td>
+								<td align="right">75.39</td>
+								<td align="right">84</td>
+								<td align="right">64</td>
+								<td align="right">2.39</td>
+								<td>4/2/2018 11:55</td>
+								</tr>
+								<tr>
+								<td>tanout</td>
+								<td>NE</td>
+								<td>Niger</td>
+								<td align="right">14.97</td>
+								<td align="right">8.88</td>
+								<td align="right">86.37</td>
+								<td align="right">15</td>
+								<td align="right">0</td>
+								<td align="right">4.41</td>
+								<td>4/2/2018 11:55</td>
+								</tr>
+								<tr>
+								<td>guilin</td>
+								<td>CN</td>
+								<td>China</td>
+								<td align="right">25.28</td>
+								<td align="right">110.29</td>
+								<td align="right">68</td>
+								<td align="right">94</td>
+								<td align="right">75</td>
+								<td align="right">2.39</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>egvekinot</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">66.32</td>
+								<td align="right">-179.17</td>
+								<td align="right">7.8</td>
+								<td align="right">66</td>
+								<td align="right">0</td>
+								<td align="right">2.28</td>
+								<td>4/2/2018 11:55</td>
+								</tr>
+								<tr>
+								<td>liuzhou</td>
+								<td>CN</td>
+								<td>China</td>
+								<td align="right">24.32</td>
+								<td align="right">109.41</td>
+								<td align="right">68.82</td>
+								<td align="right">81</td>
+								<td align="right">32</td>
+								<td align="right">3.18</td>
+								<td>4/2/2018 11:55</td>
+								</tr>
+								<tr>
+								<td>mys shmidta</td>
+								<td>RU</td>
+								<td>Russian Federation</td>
+								<td align="right">81.81</td>
+								<td align="right">-178.52</td>
+								<td align="right">82.4</td>
+								<td align="right">14</td>
+								<td align="right">0</td>
+								<td align="right">6.93</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>mataura</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-62.89</td>
+								<td align="right">-159.94</td>
+								<td align="right">73.4</td>
+								<td align="right">100</td>
+								<td align="right">90</td>
+								<td align="right">20.29</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>san patricio</td>
+								<td>MX</td>
+								<td>Mexico</td>
+								<td align="right">19.22</td>
+								<td align="right">-104.7</td>
+								<td align="right">84.2</td>
+								<td align="right">66</td>
+								<td align="right">20</td>
+								<td align="right">9.17</td>
+								<td>4/2/2018 10:46</td>
+								</tr>
+								<tr>
+								<td>sao joao da barra</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-21.64</td>
+								<td align="right">-41.05</td>
+								<td align="right">89.6</td>
+								<td align="right">52</td>
+								<td align="right">20</td>
+								<td align="right">9.17</td>
+								<td>4/2/2018 11:00</td>
+								</tr>
+								<tr>
+								<td>conceicao da barra</td>
+								<td>BR</td>
+								<td>Brazil</td>
+								<td align="right">-18.59</td>
+								<td align="right">-39.73</td>
+								<td align="right">83.4</td>
+								<td align="right">80</td>
+								<td align="right">8</td>
+								<td align="right">9.78</td>
+								<td>4/2/2018 11:53</td>
+								</tr>
+								<tr>
+								<td>mataura</td>
+								<td>PF</td>
+								<td>French Polynesia</td>
+								<td align="right">-53.86</td>
+								<td align="right">-146.14</td>
+								<td align="right">80.43</td>
+								<td align="right">100</td>
+								<td align="right">76</td>
+								<td align="right">17.6</td>
+								<td>4/2/2018 11:51</td>
+								</tr>
+							</tbody>
+						</table>
+						 </div>
+					</div>
+			</div>
+		</div>
+	</div>
+	</div>
+  <div class="col-md-1"></div>
+</div>
+</div>
+<footer>
+		<p style = "text-align: center">© Copyright Rene Venema 2018</p>
+</footer>
+</body>
+</html>
+						  
+						  
